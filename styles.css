@@ -1,6 +1,6 @@
 /* ==========================================================================
-   CHÂM CỨU THẦN TRÍ (ACU-ZEN) - 60 HUYỆT ĐẠO ÔN TẬP ĐỈNH CAO
-   Mobile-First, Ultra Clean, Zen Dark Aesthetic, Full 3D Model Support
+   CHÂM CỨU THẦN TRÍ (ACU-ZEN 3D) - 60 HUYỆT ĐẠO ÔN TẬP ĐỈNH CAO
+   Mobile-First, Ultra Clean, Zen Dark Aesthetic, Full 3D & Mini-Games
    ========================================================================== */
 
 :root {
@@ -8,7 +8,7 @@
   --bg-surface: #0f172a;
   --bg-card: #141e33;
   --bg-card-hover: #1c2942;
-  --bg-glass: rgba(20, 30, 51, 0.85);
+  --bg-glass: rgba(20, 30, 51, 0.88);
   
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-focus: rgba(52, 211, 153, 0.4);
@@ -19,11 +19,11 @@
   
   --emerald: #10b981;
   --emerald-light: #34d399;
-  --emerald-glow: rgba(16, 185, 129, 0.25);
+  --emerald-glow: rgba(16, 185, 129, 0.3);
   
   --amber: #f59e0b;
   --amber-light: #fbbf24;
-  --amber-glow: rgba(245, 158, 11, 0.25);
+  --amber-glow: rgba(245, 158, 11, 0.3);
   
   --rose: #f43f5e;
   --cyan: #06b6d4;
@@ -61,7 +61,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Container chuẩn tỷ lệ điện thoại tối ưu */
 .app-container {
   width: 100%;
   max-width: 480px;
@@ -76,7 +75,7 @@ body {
 
 /* ================= HEADER ================= */
 .app-header {
-  padding: 14px 18px 10px;
+  padding: 12px 16px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,7 +84,7 @@ body {
   z-index: 50;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(8, 12, 20, 0.85);
+  background: rgba(8, 12, 20, 0.88);
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -213,25 +212,19 @@ body {
 /* ================= MAIN CONTENT ================= */
 .main-view {
   flex: 1;
-  padding: 14px 16px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
 }
 
 .view-section {
   display: none;
-  animation: fadeIn 0.25s ease-out forwards;
 }
 
 .view-section.active {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  gap: 14px;
 }
 
 /* ================= CHIP FILTER ================= */
@@ -268,7 +261,6 @@ body {
 .flashcard-stage {
   perspective: 1200px;
   width: 100%;
-  margin-top: 4px;
 }
 
 .flashcard-wrapper {
@@ -289,7 +281,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
-  padding: 24px 20px;
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -331,15 +323,15 @@ body {
 
 .card-center {
   text-align: center;
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .point-name {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.5px;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -348,7 +340,7 @@ body {
   border-left: 3px solid var(--emerald);
   padding: 12px 14px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.5;
   color: #a7f3d0;
   font-style: italic;
@@ -384,7 +376,6 @@ body {
   gap: 6px;
 }
 
-/* Mặt sau chi tiết */
 .detail-block {
   margin-bottom: 12px;
 }
@@ -416,12 +407,11 @@ body {
   font-weight: 500;
 }
 
-/* Nút đánh giá Leitner */
 .card-actions-bar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 .action-btn {
@@ -462,7 +452,46 @@ body {
   transform: scale(0.96);
 }
 
-/* ================= 2. ĐẤU TRƯỜNG PHẢN XẠ ================= */
+/* ================= 2. ĐẤU TRƯỜNG & MINI-GAMES ================= */
+.subgame-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.subgame-tab {
+  padding: 8px 4px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.subgame-tab.active {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--emerald-light);
+}
+
+.game-subview {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-subview.active {
+  display: flex;
+}
+
+/* Game 1: Speed Quiz */
 .quiz-header {
   display: flex;
   align-items: center;
@@ -509,13 +538,8 @@ body {
   transition: width 0.1s linear, background-color 0.3s;
 }
 
-.timer-bar-fill.warning {
-  background: var(--amber);
-}
-
-.timer-bar-fill.danger {
-  background: var(--rose);
-}
+.timer-bar-fill.warning { background: var(--amber); }
+.timer-bar-fill.danger { background: var(--rose); }
 
 .quiz-card {
   background: var(--bg-card);
@@ -557,31 +581,135 @@ body {
   border-radius: var(--radius-md);
   padding: 14px 16px;
   color: #e2e8f0;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   text-align: left;
   cursor: pointer;
   transition: all 0.15s;
+}
+
+.opt-btn:active { transform: scale(0.98); }
+.opt-btn.correct { background: rgba(16, 185, 129, 0.2); border-color: var(--emerald); color: #a7f3d0; }
+.opt-btn.wrong { background: rgba(244, 63, 94, 0.2); border-color: var(--rose); color: #fca5a5; }
+
+/* Game 2: Ghép đôi Lục Bát (Memory Match) */
+.match-game-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.match-tile {
+  min-height: 82px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.opt-btn:active {
-  transform: scale(0.98);
+.match-tile:active { transform: scale(0.95); }
+.match-tile.selected { background: rgba(245, 158, 11, 0.18); border-color: var(--amber); color: var(--amber-light); }
+.match-tile.matched { background: rgba(16, 185, 129, 0.2); border-color: var(--emerald); color: #a7f3d0; opacity: 0.6; pointer-events: none; }
+
+/* Game 3: Đấu Boss Bệnh Học (RPG Battle) */
+.boss-arena {
+  background: linear-gradient(180deg, #182236 0%, #0d1424 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.opt-btn.correct {
-  background: rgba(16, 185, 129, 0.2);
-  border-color: var(--emerald);
-  color: #a7f3d0;
+.boss-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.opt-btn.wrong {
-  background: rgba(244, 63, 94, 0.2);
-  border-color: var(--rose);
-  color: #fca5a5;
+.boss-avatar {
+  font-size: 40px;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.boss-hp-bar-wrap {
+  flex: 1;
+}
+
+.boss-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.boss-title-sub {
+  font-size: 11.5px;
+  color: var(--amber-light);
+  margin-bottom: 4px;
+}
+
+.boss-hp-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.boss-hp-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--rose), #fb7185);
+  transition: width 0.3s ease-out;
+}
+
+.boss-attack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.boss-skill-btn {
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: #f1f5f9;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.boss-skill-btn:active { transform: scale(0.96); }
 
 /* ================= 3. CA LÂM SÀNG THỰC CHIẾN ================= */
 .case-card {
@@ -667,14 +795,47 @@ body {
   display: none;
 }
 
-/* ================= 4. SƠ ĐỒ 3D TOÀN DIỆN (FULL 3D ENGINE) ================= */
+/* ================= 4. SƠ ĐỒ 3D TOÀN NĂNG ================= */
 .map-toolbar-3d {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Thanh Camera Preset */
+/* Thanh chuyển 3D / 2D */
+.mode-switch-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-mode-toggle {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 3px;
+}
+
+.mode-toggle-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-toggle-btn.active {
+  background: linear-gradient(135deg, var(--emerald), #059669);
+  color: #ffffff;
+}
+
+/* Camera Presets */
 .cam-preset-scroll {
   display: flex;
   gap: 6px;
@@ -695,9 +856,6 @@ body {
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 4px;
 }
 
 .cam-preset-chip.active {
@@ -706,7 +864,6 @@ body {
   color: var(--emerald-light);
 }
 
-/* Thanh công cụ 3D phụ */
 .tools-row-3d {
   display: flex;
   justify-content: space-between;
@@ -726,24 +883,20 @@ body {
   transition: all 0.15s;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .tool-btn-3d.active {
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(245, 158, 11, 0.18);
   border-color: var(--amber);
   color: var(--amber-light);
-}
-
-.tool-btn-3d:active {
-  transform: scale(0.96);
 }
 
 /* 3D Canvas Viewport */
 .canvas3d-wrap {
   position: relative;
   width: 100%;
-  height: 490px;
+  height: 480px;
   background: radial-gradient(circle at 50% 50%, #101726 0%, #070a12 100%);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -769,6 +922,33 @@ body {
   border-radius: var(--radius-full);
 }
 
+/* 3D Floating Zoom Controls */
+.float-zoom-controls {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+}
+
+.float-zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-subtle);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
 /* 3D Game Challenge Banner */
 .game-banner-3d {
   position: absolute;
@@ -783,12 +963,6 @@ body {
   display: none;
   z-index: 15;
   box-shadow: 0 4px 20px var(--amber-glow);
-  animation: slideDown 0.25s ease-out;
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .game-banner-title {
@@ -806,7 +980,14 @@ body {
   margin-top: 3px;
 }
 
-/* 3D Point Card Popover */
+.game-compass-hint {
+  font-size: 12px;
+  color: #fde68a;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* 3D Popover Card */
 .popover-3d-card {
   position: absolute;
   bottom: 12px;
@@ -821,7 +1002,6 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
   display: none;
   z-index: 20;
-  animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .popover-head {
@@ -861,7 +1041,7 @@ body {
   font-size: 12.5px;
   color: #cbd5e1;
   line-height: 1.4;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .popover-btn-row {
@@ -887,6 +1067,67 @@ body {
   background: rgba(16, 185, 129, 0.2);
   border-color: var(--emerald);
   color: var(--emerald-light);
+}
+
+/* Thanh chọn nhanh 60 huyệt cuộn ngang */
+.quick-points-carousel {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px 2px 4px;
+  scrollbar-width: none;
+}
+.quick-points-carousel::-webkit-scrollbar { display: none; }
+
+.quick-point-badge {
+  padding: 7px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quick-point-badge:active { transform: scale(0.95); }
+.quick-point-badge.active {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: var(--emerald);
+  color: var(--emerald-light);
+}
+
+/* 2D Fallback Map */
+.body-canvas-wrap-2d {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: radial-gradient(circle at 50% 50%, #111a2e 0%, #080c14 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 320px;
+}
+
+.acupoint-dot circle {
+  fill: var(--emerald);
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 4px var(--emerald));
+  cursor: pointer;
 }
 
 /* Fullscreen 3D overlay */
@@ -918,9 +1159,7 @@ body {
   transition: border-color 0.2s;
 }
 
-.search-input:focus {
-  border-color: var(--emerald);
-}
+.search-input:focus { border-color: var(--emerald); }
 
 .search-icon {
   position: absolute;
@@ -947,9 +1186,7 @@ body {
   transition: all 0.15s;
 }
 
-.point-list-item:active {
-  background: var(--bg-card-hover);
-}
+.point-list-item:active { background: var(--bg-card-hover); }
 
 .item-head {
   display: flex;
@@ -977,7 +1214,6 @@ body {
   line-height: 1.4;
 }
 
-/* Cheat Sheet Table */
 .cheat-sheet-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -1004,25 +1240,15 @@ body {
   font-size: 12.5px;
 }
 
-.cheat-row:last-child {
-  border-bottom: none;
-}
+.cheat-row:last-child { border-bottom: none; }
+.cheat-key { color: #94a3b8; }
+.cheat-val { font-weight: 600; color: #f1f5f9; text-align: right; }
 
-.cheat-key {
-  color: #94a3b8;
-}
-
-.cheat-val {
-  font-weight: 600;
-  color: #f1f5f9;
-  text-align: right;
-}
-
-/* Modal Popup Chi Tiết */
+/* Modal Bottom Sheet */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   z-index: 200;
   display: none;
@@ -1039,7 +1265,6 @@ body {
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   padding: 20px 18px calc(20px + var(--safe-bottom));
   overflow-y: auto;
-  animation: slideUp 0.25s ease-out;
 }
 
 .modal-close-bar {
@@ -1055,7 +1280,6 @@ body {
   border-radius: var(--radius-full);
 }
 
-/* Utility buttons */
 .primary-btn {
   width: 100%;
   padding: 14px;
@@ -1070,6 +1294,4 @@ body {
   transition: transform 0.15s;
 }
 
-.primary-btn:active {
-  transform: scale(0.98);
-}
+.primary-btn:active { transform: scale(0.98); }

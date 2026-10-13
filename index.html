@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#080c14">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>AcuZen - 60 Huyệt Đạo Đông Y 3D</title>
+  <title>AcuZen 3D - 60 Huyệt Đạo Đông Y</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,7 +16,6 @@
     <header class="app-header">
       <div class="brand-wrapper">
         <div class="brand-symbol">
-          <!-- Biểu tượng kim châm tối giản -->
           <svg viewBox="0 0 24 24">
             <path d="M12 2v20M8 6l4-4 4 4M9 15l3 3 3-3"/>
           </svg>
@@ -137,25 +136,75 @@
         </div>
       </section>
 
-      <!-- 2. VIEW: SPEED QUIZ -->
+      <!-- 2. VIEW: ĐẤU TRƯỜNG & MINI-GAMES -->
       <section id="view-quiz" class="view-section">
-        <div class="quiz-header">
-          <div class="hearts-row">
-            <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <!-- 3 Game Sub-Tabs -->
+        <div class="subgame-nav">
+          <button class="subgame-tab active" data-subgame="quiz">⚡ Trắc Nghiệm (12s)</button>
+          <button class="subgame-tab" data-subgame="match">🧩 Ghép Đôi Lục Bát</button>
+          <button class="subgame-tab" data-subgame="boss">⚔️ Đấu Boss Bệnh</button>
+        </div>
+
+        <!-- Subgame 1: Speed Quiz -->
+        <div id="subgame-quiz" class="game-subview active">
+          <div class="quiz-header">
+            <div class="hearts-row">
+              <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div id="combo-badge" class="combo-badge">🔥 Combo x1</div>
           </div>
-          <div id="combo-badge" class="combo-badge">🔥 Combo x1</div>
+
+          <div class="timer-bar-wrap">
+            <div id="timer-bar-fill" class="timer-bar-fill"></div>
+          </div>
+
+          <div class="quiz-card">
+            <div id="quiz-type-badge" class="quiz-type-badge">THƠ VÈ GỢI NHỚ</div>
+            <div id="quiz-question" class="quiz-question">Đang nạp câu hỏi...</div>
+            <div id="quiz-options" class="quiz-options"></div>
+          </div>
         </div>
 
-        <div class="timer-bar-wrap">
-          <div id="timer-bar-fill" class="timer-bar-fill"></div>
+        <!-- Subgame 2: Ghép Đôi Lục Bát (Memory Match) -->
+        <div id="subgame-match" class="game-subview">
+          <div class="match-game-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:13px;font-weight:700;color:var(--amber-light);">🧩 GHÉP TÊN HUYỆT & THƠ VÈ</span>
+              <span id="match-moves" style="font-size:12px;color:var(--text-muted);">0 lượt</span>
+            </div>
+            <div class="match-grid" id="match-grid"></div>
+            <button class="primary-btn" id="btn-restart-match" style="padding:10px;">Ván Mới 🔄</button>
+          </div>
         </div>
 
-        <div class="quiz-card">
-          <div id="quiz-type-badge" class="quiz-type-badge">THƠ VÈ GỢI NHỚ</div>
-          <div id="quiz-question" class="quiz-question">Đang nạp câu hỏi...</div>
-          <div id="quiz-options" class="quiz-options"></div>
+        <!-- Subgame 3: Đấu Boss Bệnh Học (RPG Battle) -->
+        <div id="subgame-boss" class="game-subview">
+          <div class="boss-arena">
+            <div class="boss-header-row">
+              <div id="boss-avatar" class="boss-avatar">👺</div>
+              <div class="boss-hp-bar-wrap">
+                <div id="boss-name" class="boss-name">Phong Hàn Tà Thần</div>
+                <div id="boss-title" class="boss-title-sub">Trùm Liệt Mặt Méo Miệng (Dây VII)</div>
+                <div class="boss-hp-bg">
+                  <div id="boss-hp-fill" class="boss-hp-fill"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);margin-top:2px;">
+                  <span>HP: <strong id="boss-hp-text" style="color:#ffffff;">100/100</strong></span>
+                  <span id="player-hp-text" style="color:var(--emerald-light);">❤️ Thầy Thuốc: 100%</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="boss-desc-box" style="font-size:12.5px;color:#cbd5e1;line-height:1.4;background:rgba(0,0,0,0.3);padding:8px 10px;border-radius:var(--radius-sm);">
+              Boss phong hàn làm méo miệng, mắt nhắm không kín. Hãy tung chiêu huyệt đạo thích hợp để trừ tà!
+            </div>
+
+            <div style="font-size:12px;font-weight:700;color:var(--amber-light);margin-top:2px;">Chọn Chiêu Thức Huyệt Đạo Tấn Công:</div>
+            <div class="boss-attack-grid" id="boss-attack-grid"></div>
+            <div id="boss-battle-log" style="font-size:12px;color:#a7f3d0;background:rgba(16,185,129,0.1);padding:8px;border-radius:var(--radius-sm);display:none;"></div>
+          </div>
         </div>
       </section>
 
@@ -175,11 +224,23 @@
         </div>
       </section>
 
-      <!-- 4. VIEW: SƠ ĐỒ 3D TOÀN NĂNG -->
+      <!-- 4. VIEW: SƠ ĐỒ 3D TOÀN NĂNG & 2D DỰ PHÒNG -->
       <section id="view-map" class="view-section">
         <div class="map-toolbar-3d">
+          <!-- Thanh Chuyển Chế Độ 3D / 2D & Xoay Mặt Trước / Sau -->
+          <div class="mode-switch-bar">
+            <div class="view-mode-toggle">
+              <button id="btn-mode-3d" class="mode-toggle-btn active">🌐 3D Người Thật</button>
+              <button id="btn-mode-2d" class="mode-toggle-btn">🗺️ 2D Bản Đồ</button>
+            </div>
+            <div style="display:flex;gap:4px;">
+              <button id="btn-side-front" class="tool-btn-3d active" title="Xem mặt trước">Trước</button>
+              <button id="btn-side-back" class="tool-btn-3d" title="Xem mặt sau">Sau (180°)</button>
+            </div>
+          </div>
+
           <!-- Quick Camera Presets -->
-          <div class="cam-preset-scroll">
+          <div class="cam-preset-scroll" id="cam-preset-scroll">
             <button class="cam-preset-chip active" data-preset="all">🌐 Toàn Thân</button>
             <button class="cam-preset-chip" data-preset="head">👤 Đầu Mặt</button>
             <button class="cam-preset-chip" data-preset="chest">🫁 Ngực Bụng</button>
@@ -203,7 +264,13 @@
           <div id="canvas3d-container" class="canvas3d-container"></div>
           <div class="canvas3d-hint">1 ngón xoay • 2 ngón thu phóng • Chạm huyệt</div>
 
-          <!-- 3D Game Challenge Banner -->
+          <!-- Floating Zoom Buttons for Phones -->
+          <div class="float-zoom-controls">
+            <button id="btn-zoom-in" class="float-zoom-btn" title="Phóng to">+</button>
+            <button id="btn-zoom-out" class="float-zoom-btn" title="Thu nhỏ">−</button>
+          </div>
+
+          <!-- 3D Game Challenge Banner with Direction Compass -->
           <div id="game-banner-3d" class="game-banner-3d">
             <div class="game-banner-title">
               <span>🎯 THỬ THÁCH TÌM HUYỆT 3D</span>
@@ -212,6 +279,7 @@
             <div id="game-banner-prompt" class="game-banner-prompt">
               Xoay và chạm vào: <strong style="color:var(--amber-light);" id="game-3d-target">Bách hội</strong>
             </div>
+            <div id="game-compass-hint" class="game-compass-hint"></div>
           </div>
 
           <!-- Floating Acupoint Info Popover -->
@@ -232,12 +300,29 @@
             </div>
           </div>
         </div>
+
+        <!-- 2D Viewport Container (Fallback & Fast Overview) -->
+        <div id="container-2d" class="body-canvas-wrap-2d" style="display:none;">
+          <svg id="body-svg-2d" class="body-svg" viewBox="0 0 300 520">
+            <path d="M 150 20 C 135 20, 130 35, 130 50 C 130 65, 138 80, 142 85 L 140 95 C 120 98, 95 105, 80 120 C 65 135, 55 175, 50 220 L 52 270 L 48 300 C 45 315, 50 320, 58 320 C 66 320, 70 305, 75 270 L 85 220 C 90 200, 100 180, 110 180 L 115 260 C 115 300, 120 340, 125 380 L 120 460 L 115 490 C 112 505, 120 510, 130 510 C 140 510, 142 495, 140 460 L 145 380 L 150 310 L 155 380 L 160 460 C 158 495, 160 510, 170 510 C 180 510, 188 505, 185 490 L 180 460 L 175 380 C 180 340, 185 300, 185 260 L 190 180 C 200 180, 210 200, 215 220 L 225 270 C 230 305, 234 320, 242 320 C 250 320, 255 315, 252 300 L 248 270 L 250 220 C 245 175, 235 135, 220 120 C 205 105, 180 98, 160 95 L 158 85 C 162 80, 170 65, 170 50 C 170 35, 165 20, 150 20 Z" 
+                  fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" stroke-width="1.8"/>
+            <g id="points-group-2d"></g>
+          </svg>
+        </div>
+
+        <!-- Thanh Cuộn Ngang 60 Huyệt Chọn Nhanh (Quick Acupoints Navigator) -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;">
+          <span style="font-size:12px;font-weight:700;color:var(--emerald-light);">⚡ CHỌN NHANH 60 HUYỆT (TỰ BAY ĐẾN):</span>
+          <span style="font-size:11px;color:var(--text-dim);">Cuộn ngang ➔</span>
+        </div>
+        <div class="quick-points-carousel" id="quick-points-carousel"></div>
       </section>
 
       <!-- 5. VIEW: ATLAS & TRA CỨU -->
       <section id="view-atlas" class="view-section">
         <div class="search-input-wrap">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
           <input type="text" id="search-input" class="search-input" placeholder="Tìm tên huyệt, mã WHO, triệu chứng, số thốn...">
         </div>
 
@@ -304,14 +389,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
         </svg>
-        <span>Đấu</span>
+        <span>Đấu Game</span>
       </button>
 
       <button class="nav-btn" data-view="cases">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
         </svg>
-        <span>Bệnh</span>
+        <span>Bệnh Án</span>
       </button>
 
       <button class="nav-btn" data-view="map">
@@ -327,7 +412,7 @@
           <circle cx="11" cy="11" r="8"/>
           <path d="M21 21l-4.35-4.35"/>
         </svg>
-        <span>Tra</span>
+        <span>Tra Cứu</span>
       </button>
     </nav>
 
@@ -348,6 +433,7 @@
   <!-- APP DATA & SCRIPTS -->
   <script src="acupoints_data.js"></script>
   <script src="clinical_cases.js"></script>
+  <script src="boss_game.js"></script>
   <script src="viewer3d.js"></script>
   <script src="app.js"></script>
 </body>
