@@ -1,12 +1,13 @@
 // ==========================================================================
-// CHÂM CỨU THẦN TRÍ (ACU-ZEN) - 60 HUYỆT ĐẠO Y HỌC CỔ TRUYỀN
-// Full Interactive Logic, Audio Synthesis, Games & Flashcards
+// CHÂM CỨU THẦN TRÍ (ACU-ZEN 3D) - TOÀN DIỆN 60 HUYỆT ĐẠO Y HỌC CỔ TRUYỀN
+// Full Interactive Logic, Audio Synthesis, 3D Engine, Games & Flashcards
 // ==========================================================================
+/* globals Acu3D */
 
-(function() {
+(function () {
   'use strict';
 
-  // --- AUDIO SYNTHESIZER (Web Audio API - No MP3s needed, zero latency) ---
+  // --- AUDIO SYNTHESIZER (Web Audio API - Offline, Zero Latency) ---
   class SoundEngine {
     constructor() {
       this.ctx = null;
@@ -58,17 +59,11 @@
       this.playTone(180, 'sawtooth', 0.25, 0.12);
       if (navigator.vibrate) navigator.vibrate(60);
     }
-    levelUp() {
-      const notes = [440, 554.37, 659.25, 880];
-      notes.forEach((freq, i) => {
-        setTimeout(() => this.playTone(freq, 'sine', 0.3, 0.15), i * 90);
-      });
-    }
   }
 
   const sound = new SoundEngine();
 
-  // --- STATE MANAGEMENT ---
+  // --- APPLICATION STATE ---
   const state = {
     allPoints: window.ACUPOINTS_DATA || [],
     cases: window.CLINICAL_CASES || [],
@@ -85,7 +80,6 @@
       lives: 3,
       timer: null,
       timeLeft: 12,
-      currentQuestion: null,
       isActive: false
     },
 
@@ -95,10 +89,15 @@
       selectedPoints: []
     },
 
-    // Map State
-    mapView: 'front', // 'front' | 'back'
-    mapQuizTarget: null,
-    mapScore: 0,
+    // 3D Game State
+    game3D: {
+      isActive: false,
+      targetPoint: null,
+      score: 0
+    },
+
+    // Current selected point in 3D
+    selectedPoint3D: null,
 
     // Persistence
     masteryMap: JSON.parse(localStorage.getItem('acu_mastery') || '{}'),
@@ -136,7 +135,6 @@
     el.quizQuestion = document.getElementById('quiz-question');
     el.quizTypeBadge = document.getElementById('quiz-type-badge');
     el.quizOptions = document.getElementById('quiz-options');
-    el.quizScoreVal = document.getElementById('quiz-score-val');
 
     // Cases
     el.caseNum = document.getElementById('case-num');
@@ -146,15 +144,29 @@
     el.caseFeedback = document.getElementById('case-feedback');
     el.btnCheckCase = document.getElementById('btn-check-case');
 
-    // Map
-    el.switchFront = document.getElementById('switch-front');
-    el.switchBack = document.getElementById('switch-back');
-    el.bodySvgFront = document.getElementById('body-svg-front');
-    el.bodySvgBack = document.getElementById('body-svg-back');
-    el.mapPreview = document.getElementById('map-preview');
-    el.previewName = document.getElementById('preview-name');
-    el.previewDesc = document.getElementById('preview-desc');
-    el.mapGamePrompt = document.getElementById('map-game-prompt');
+    // 3D Model Elements
+    el.canvas3dWrap = document.getElementById('canvas3d-wrap');
+    el.canvas3dContainer = document.getElementById('canvas3d-container');
+    el.camPresets = document.querySelectorAll('.cam-preset-chip');
+    el.btnToggleCore = document.getElementById('btn-toggle-core');
+    el.btnToggleMeridians = document.getElementById('btn-toggle-meridians');
+    el.btnGame3D = document.getElementById('btn-game-3d');
+    el.btnAutorotate3D = document.getElementById('btn-autorotate-3d');
+    el.btnFullscreen3D = document.getElementById('btn-fullscreen-3d');
+    el.gameBanner3D = document.getElementById('game-banner-3d');
+    el.game3DTarget = document.getElementById('game-3d-target');
+    el.game3DScore = document.getElementById('game-3d-score');
+    
+    // 3D Popover
+    el.popover3D = document.getElementById('popover-3d-card');
+    el.popoverName = document.getElementById('popover-name');
+    el.popoverWho = document.getElementById('popover-who');
+    el.popoverRegion = document.getElementById('popover-region');
+    el.popoverVerse = document.getElementById('popover-verse');
+    el.popoverLoc = document.getElementById('popover-loc');
+    el.popoverInd = document.getElementById('popover-ind');
+    el.btnPopoverDetail = document.getElementById('btn-popover-detail');
+    el.btnPopoverClose = document.getElementById('btn-popover-close');
 
     // Atlas
     el.searchInput = document.getElementById('search-input');
@@ -171,7 +183,11 @@
     bindEvents();
     renderFlashcard();
     renderAtlasList();
-    initMapDots();
+
+    // Init 3D Viewport
+    if (window.Acu3D && el.canvas3dContainer) {
+      window.Acu3D.init(el.canvas3dContainer, on3DPointSelected);
+    }
   }
 
   function updateFilteredPoints() {
@@ -202,13 +218,12 @@
     if (!state.filteredPoints.length) return;
     const point = state.filteredPoints[state.currentIndex];
     
-    // Reset flip
     state.isCardFlipped = false;
     el.cardWrapper.classList.remove('flipped');
 
     el.cardRegion.textContent = point.region_name;
     el.cardIndex.textContent = `${state.currentIndex + 1} / ${state.filteredPoints.length}`;
-    el.pointName.textContent = point.name;
+    el.pointName.textContent = point.name + (point.who_code ? ` [${point.who_code}]` : '');
     el.mnemonicVerse.textContent = `"${point.mnemonic}"`;
     el.pointTipText.textContent = point.memory_trick;
 
@@ -259,17 +274,10 @@
     state.quiz.timeLeft = 12;
     updateTimerBar();
 
-    // Generate Question Types:
-    // 0: Thơ vè -> Tên huyệt
-    // 1: Bệnh lý -> Tên huyệt
-    // 2: Vị trí -> Tên huyệt
-    // 3: Cảnh báo / Lưu ý vàng -> Tên huyệt
     const qTypes = [0, 1, 2, 3];
     const qType = qTypes[Math.floor(Math.random() * qTypes.length)];
-    
     const correctPoint = state.allPoints[Math.floor(Math.random() * state.allPoints.length)];
     
-    // Pick 3 distractors
     const distractors = state.allPoints
       .filter(p => p.id !== correctPoint.id)
       .sort(() => 0.5 - Math.random())
@@ -308,12 +316,11 @@
     options.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'opt-btn';
-      btn.textContent = opt.name;
-      btn.addEventListener('click', () => handleQuizAnswer(opt.id === correctPoint.id, btn, correctPoint.name));
+      btn.textContent = opt.name + (opt.who_code ? ` (${opt.who_code})` : '');
+      btn.addEventListener('click', () => handleQuizAnswer(opt.id === correctPoint.id, btn, opt.name));
       el.quizOptions.appendChild(btn);
     });
 
-    // Start countdown
     state.quiz.timer = setInterval(() => {
       state.quiz.timeLeft -= 0.1;
       updateTimerBar();
@@ -336,20 +343,17 @@
     }
   }
 
-  function handleQuizAnswer(isCorrect, btnClicked, correctName) {
+  function handleQuizAnswer(isCorrect, btnClicked, clickedName) {
     clearInterval(state.quiz.timer);
     
-    // Disable all options
     const allBtns = el.quizOptions.querySelectorAll('.opt-btn');
     allBtns.forEach(b => {
       b.disabled = true;
-      if (b.textContent === correctName) {
-        b.classList.add('correct');
-      }
     });
 
     if (isCorrect) {
       sound.correct();
+      if (btnClicked) btnClicked.classList.add('correct');
       state.quiz.streak++;
       const bonus = state.quiz.streak * 5;
       state.quiz.score += 10 + bonus;
@@ -394,13 +398,11 @@
       <span style="color:var(--emerald-light);font-size:12px;margin-top:4px;display:block;">Chẩn đoán: ${currentCase.diagnosis}</span>
     `;
 
-    // Reset selection & feedback
     state.caseState.selectedPoints = [];
     el.caseFeedback.style.display = 'none';
     el.btnCheckCase.textContent = 'Kê Huyệt Điều Trị 🩺';
     el.btnCheckCase.style.display = 'block';
 
-    // Build choice pool (target points + some distractors)
     const targets = state.allPoints.filter(p => currentCase.target_points.includes(p.id));
     const otherPoints = state.allPoints.filter(p => !currentCase.target_points.includes(p.id))
       .sort(() => 0.5 - Math.random())
@@ -463,51 +465,78 @@
     };
   }
 
-  // --- 4. MAP SVG & TÌM HUYỆT ---
-  function initMapDots() {
-    renderMapDots(el.bodySvgFront, 'front');
-    renderMapDots(el.bodySvgBack, 'back');
+  // --- 4. 3D VIEWER INTERACTIONS ---
+  function on3DPointSelected(pointData, whoCode) {
+    if (!pointData) {
+      // Named point from other meridians
+      pointData = {
+        name: whoCode,
+        who_code: whoCode,
+        region_name: "Kinh Lạc",
+        mnemonic: "Huyệt đạo bổ trợ trên hệ thống kinh lạc",
+        location: "Xem vị trí trên mô hình 3D",
+        indication: "Tra cứu theo mã WHO " + whoCode
+      };
+    }
+
+    sound.correct();
+    state.selectedPoint3D = pointData;
+
+    // Show Popover Card
+    el.popoverName.textContent = pointData.name;
+    el.popoverWho.textContent = pointData.who_code ? `[${pointData.who_code}]` : "";
+    el.popoverRegion.textContent = pointData.region_name || "Đông Y";
+    el.popoverVerse.textContent = `"${pointData.mnemonic || 'Thơ vè nhớ huyệt'}"`;
+    el.popoverLoc.innerHTML = `<strong>Vị trí:</strong> ${pointData.location || 'Chưa cập nhật'}`;
+    el.popoverInd.innerHTML = `<strong>Tác dụng:</strong> ${pointData.indication || 'Chưa cập nhật'}`;
+
+    el.popover3D.style.display = "block";
   }
 
-  function renderMapDots(svgEl, viewType) {
-    if (!svgEl) return;
-    
-    // Filter points belonging to this view
-    const backRegions = ['back'];
-    const pts = state.allPoints.filter(p => {
-      if (viewType === 'back') {
-        return backRegions.includes(p.region_id) || ['h_8', 'h_11', 'h_37', 'h_49', 'h_53', 'h_56', 'h_60'].includes(p.id);
-      } else {
-        return !backRegions.includes(p.region_id) && !['h_8', 'h_11', 'h_37', 'h_49', 'h_53', 'h_56', 'h_60'].includes(p.id);
-      }
-    });
+  function start3DGame() {
+    state.game3D.isActive = true;
+    state.game3D.score = 0;
+    el.btnGame3D.classList.add("active");
+    el.gameBanner3D.style.display = "block";
+    el.popover3D.style.display = "none";
+    next3DGameQuestion();
+  }
 
-    pts.forEach(p => {
-      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      g.setAttribute('class', 'acupoint-dot');
-      g.dataset.id = p.id;
-      
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('cx', p.coords.x * 2.4 + 30); // Scale to SVG viewBox 300x520
-      circle.setAttribute('cy', p.coords.y * 5);
-      circle.setAttribute('r', '6');
+  function stop3DGame() {
+    state.game3D.isActive = false;
+    el.btnGame3D.classList.remove("active");
+    el.gameBanner3D.style.display = "none";
+    if (window.Acu3D) window.Acu3D.stopFindPointGame();
+  }
 
-      g.appendChild(circle);
-      
-      g.addEventListener('click', (e) => {
-        e.stopPropagation();
-        sound.tap();
-        showMapPreview(p);
+  function next3DGameQuestion() {
+    // Pick random target from 60 points
+    const target = state.allPoints[Math.floor(Math.random() * state.allPoints.length)];
+    state.game3D.targetPoint = target;
+
+    el.game3DTarget.textContent = `${target.name} [${target.who_code || ''}]`;
+    el.game3DScore.textContent = `${state.game3D.score} XP`;
+
+    if (window.Acu3D) {
+      window.Acu3D.startFindPointGame(target, function (isCorrect, clickedData) {
+        if (isCorrect) {
+          sound.correct();
+          state.game3D.score += 25;
+          state.stats.score += 25;
+          localStorage.setItem('acu_stats', JSON.stringify(state.stats));
+          renderStats();
+          el.game3DTarget.innerHTML = `<span style="color:var(--emerald-light)">✓ Chính xác! +25 XP</span>`;
+          setTimeout(next3DGameQuestion, 1200);
+        } else {
+          sound.wrong();
+          const hint = target.region_name ? `(Gợi ý: Thuộc vùng ${target.region_name})` : "";
+          el.game3DTarget.innerHTML = `<span style="color:var(--rose)">Chưa đúng! ${hint}</span>`;
+          setTimeout(() => {
+            el.game3DTarget.textContent = `${target.name} [${target.who_code || ''}]`;
+          }, 1400);
+        }
       });
-
-      svgEl.appendChild(g);
-    });
-  }
-
-  function showMapPreview(p) {
-    el.mapPreview.style.display = 'block';
-    el.previewName.innerHTML = `<span>${p.name}</span> <span style="font-size:12px;color:var(--emerald-light)">${p.region_name}</span>`;
-    el.previewDesc.innerHTML = `<strong>Vị trí:</strong> ${p.location}<br><strong>Tác dụng:</strong> ${p.indication}`;
+    }
   }
 
   // --- 5. ATLAS & SEARCH ---
@@ -518,6 +547,7 @@
     const filtered = state.allPoints.filter(p => {
       if (!q) return true;
       return p.name.toLowerCase().includes(q) ||
+             (p.who_code && p.who_code.toLowerCase().includes(q)) ||
              p.indication.toLowerCase().includes(q) ||
              p.location.toLowerCase().includes(q) ||
              p.mnemonic.toLowerCase().includes(q);
@@ -533,7 +563,7 @@
       item.className = 'point-list-item';
       item.innerHTML = `
         <div class="item-head">
-          <span class="item-name">${p.name}</span>
+          <span class="item-name">${p.name} <small style="font-size:12px;color:var(--emerald-light);">[${p.who_code || ''}]</small></span>
           <span class="region-tag">${p.region_name}</span>
         </div>
         <div class="item-loc">${p.location}</div>
@@ -552,6 +582,7 @@
       <div class="modal-close-bar"><div class="modal-drag-handle"></div></div>
       <div class="card-top-bar" style="margin-bottom:12px;">
         <span class="region-tag">${p.region_name}</span>
+        <span class="region-tag" style="color:var(--emerald-light);border-color:var(--emerald);">${p.who_code || ''}</span>
       </div>
       <h2 style="font-size:26px;color:#fff;margin-bottom:8px;">${p.name}</h2>
       <div class="point-mnemonic-verse">"${p.mnemonic}"</div>
@@ -573,7 +604,26 @@
           ⚠️ <strong>Lưu ý đặc biệt:</strong> ${p.special_note}
         </div>
       ` : ''}
+
+      <button id="btn-jump-3d" class="primary-btn" style="margin-top:16px;">
+        Xem Vị Trí Trên Người Mẫu 3D 🌐
+      </button>
     `;
+
+    document.getElementById('btn-jump-3d').addEventListener('click', () => {
+      sound.tap();
+      el.modalOverlay.style.display = 'none';
+      // Switch to 3D Map Tab
+      const mapTab = Array.from(el.tabs).find(t => t.dataset.view === 'map');
+      if (mapTab) mapTab.click();
+      setTimeout(() => {
+        if (window.Acu3D && p.who_code) {
+          window.Acu3D.selectPoint(p.who_code);
+          on3DPointSelected(p, p.who_code);
+        }
+      }, 350);
+    });
+
     el.modalOverlay.style.display = 'flex';
   }
 
@@ -594,6 +644,10 @@
           startQuiz();
         } else if (targetView === 'cases') {
           renderCase();
+        } else if (targetView === 'map') {
+          setTimeout(() => {
+            if (window.Acu3D) window.Acu3D.resize();
+          }, 100);
         }
       });
     });
@@ -640,21 +694,64 @@
     // Case Submit
     el.btnCheckCase.addEventListener('click', checkCase);
 
-    // Map View Switcher
-    el.switchFront.addEventListener('click', () => {
-      sound.tap();
-      el.switchFront.classList.add('active');
-      el.switchBack.classList.remove('active');
-      el.bodySvgFront.style.display = 'block';
-      el.bodySvgBack.style.display = 'none';
+    // 3D Camera Presets
+    el.camPresets.forEach(chip => {
+      chip.addEventListener('click', () => {
+        sound.tap();
+        el.camPresets.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const presetKey = chip.dataset.preset;
+        if (window.Acu3D) window.Acu3D.focusRegion(presetKey);
+      });
     });
 
-    el.switchBack.addEventListener('click', () => {
+    // 3D Secondary Tools
+    el.btnToggleCore.addEventListener('click', () => {
       sound.tap();
-      el.switchBack.classList.add('active');
-      el.switchFront.classList.remove('active');
-      el.bodySvgFront.style.display = 'none';
-      el.bodySvgBack.style.display = 'block';
+      const only = window.Acu3D.toggleCoreOnly();
+      el.btnToggleCore.classList.toggle('active', only);
+    });
+
+    el.btnToggleMeridians.addEventListener('click', () => {
+      sound.tap();
+      const show = window.Acu3D.toggleMeridians();
+      el.btnToggleMeridians.classList.toggle('active', show);
+    });
+
+    el.btnAutorotate3D.addEventListener('click', () => {
+      sound.tap();
+      const rot = window.Acu3D.toggleAutoRotate();
+      el.btnAutorotate3D.classList.toggle('active', rot);
+    });
+
+    el.btnFullscreen3D.addEventListener('click', () => {
+      sound.tap();
+      el.canvas3dWrap.classList.toggle('fullscreen');
+      setTimeout(() => {
+        if (window.Acu3D) window.Acu3D.resize();
+      }, 150);
+    });
+
+    el.btnGame3D.addEventListener('click', () => {
+      sound.tap();
+      if (state.game3D.isActive) {
+        stop3DGame();
+      } else {
+        start3DGame();
+      }
+    });
+
+    // 3D Popover buttons
+    el.btnPopoverClose.addEventListener('click', () => {
+      sound.tap();
+      el.popover3D.style.display = 'none';
+    });
+
+    el.btnPopoverDetail.addEventListener('click', () => {
+      sound.tap();
+      if (state.selectedPoint3D) {
+        openPointDetailModal(state.selectedPoint3D);
+      }
     });
 
     // Search Input
@@ -678,16 +775,13 @@
     el.cardWrapper.addEventListener('touchend', (e) => {
       const touchEndX = e.changedTouches[0].screenX;
       if (touchEndX - touchStartX > 50) {
-        // Swipe Right -> Prev
         nextCard(-1);
       } else if (touchStartX - touchEndX > 50) {
-        // Swipe Left -> Next
         nextCard(1);
       }
     }, { passive: true });
   }
 
-  // Start when DOM is ready
   document.addEventListener('DOMContentLoaded', init);
 
 })();

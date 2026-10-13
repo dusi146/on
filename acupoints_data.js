@@ -1,9 +1,9 @@
-// CƠ SỞ DỮ LIỆU 60 HUYỆT ĐẠO CHÂM CỨU Y HỌC CỔ TRUYỀN
-// Tích hợp thơ lục bát, vè nhớ, mẹo thông minh, lưu ý vàng
+// CƠ SỞ DỮ LIỆU 60 HUYỆT ĐẠO CHÂM CỨU Y HỌC CỔ TRUYỀN (KÈM MÃ QUỐC TẾ WHO VÀ TỌA ĐỘ 3D)
 window.ACUPOINTS_DATA = [
   {
     "id": "h_1",
     "name": "Bách hội",
+    "who_code": "GV-20",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Đỉnh đầu, nơi gặp nhau giữa 2 đỉnh tai và đường giữa",
@@ -20,11 +20,17 @@ window.ACUPOINTS_DATA = [
     "coords": {
       "x": 50,
       "y": 4
-    }
+    },
+    "pos_3d": [
+      0,
+      1.8,
+      0
+    ]
   },
   {
     "id": "h_2",
     "name": "Ấn đường",
+    "who_code": "EX-HN3",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Chỗ lõm giữa 2 lông mày",
@@ -42,11 +48,17 @@ window.ACUPOINTS_DATA = [
     "coords": {
       "x": 50,
       "y": 8
-    }
+    },
+    "pos_3d": [
+      0,
+      1.68,
+      0.082
+    ]
   },
   {
     "id": "h_3",
     "name": "Thái dương",
+    "who_code": "EX-HN5",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Sau đuôi mắt ngoài 1 thốn, sát bờ trên mỏm tiếp xương thái dương",
@@ -63,11 +75,17 @@ window.ACUPOINTS_DATA = [
     "coords": {
       "x": 56,
       "y": 8
-    }
+    },
+    "pos_3d": [
+      0.072,
+      1.67,
+      0.038
+    ]
   },
   {
     "id": "h_4",
     "name": "Nghinh hương",
+    "who_code": "LI-20",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Từ cánh mũi đo ra ngoài 1/5 thốn",
@@ -89,6 +107,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_5",
     "name": "Nhân trung",
+    "who_code": "GV-26",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "1/3 trên rãnh nhân trung",
@@ -111,6 +130,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_6",
     "name": "Địa thương",
+    "who_code": "ST-4",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Ngoài khóe miệng 2/5 thốn",
@@ -132,6 +152,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_7",
     "name": "Giáp xa",
+    "who_code": "ST-6",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Từ huyệt địa thương đo ra sau 2 thốn về phía góc hàm, tương ứng bờ trên cơ nhai",
@@ -153,6 +174,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_8",
     "name": "Phong trì",
+    "who_code": "GB-20",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Từ xương chẩm cổ 1 đo ngang ra 2 thốn, huyệt ở chỗ lõm ngoài cơ thang sau cơ ức đòn chũm",
@@ -174,6 +196,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_9",
     "name": "Toản trúc",
+    "who_code": "BL-2",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Chỗ lõm bờ trong cung lông mày",
@@ -196,6 +219,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_10",
     "name": "Liêm tuyền",
+    "who_code": "CV-23",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Chính giữa bờ trên xương móng",
@@ -218,6 +242,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_11",
     "name": "Ế phong",
+    "who_code": "TE-17",
     "region_id": "head",
     "region_name": "Đầu, Mặt, Cổ",
     "location": "Chỗ lõm giữa xương hàm dưới và xương chũm, ấn dái tai tới đâu là huyệt",
@@ -240,6 +265,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_12",
     "name": "Thiên đột",
+    "who_code": "CV-22",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Chỗ lõm trên bờ xương ức",
@@ -261,6 +287,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_13",
     "name": "Đản trung",
+    "who_code": "CV-17",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Chính giữa điểm nối giữa 2 núm vú (nam), ngang liên sườn 4 (nữ)",
@@ -282,6 +309,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_14",
     "name": "Trung phủ",
+    "who_code": "LU-1",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Liên sườn 2, rãnh delta ngực",
@@ -304,6 +332,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_15",
     "name": "Trung quản",
+    "who_code": "CV-12",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Giữa con đường từ mũi kiếm xương ức tới rốn",
@@ -326,6 +355,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_16",
     "name": "Thần khuyết",
+    "who_code": "CV-8",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Rốn",
@@ -347,6 +377,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_17",
     "name": "Thiên khu",
+    "who_code": "ST-25",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Từ rốn đo ngang ra 2 thốn 2 bên",
@@ -369,6 +400,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_18",
     "name": "Quan nguyên",
+    "who_code": "CV-4",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Từ rốn đo xuống 3 thốn, trên đường giữa bụng",
@@ -391,6 +423,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_19",
     "name": "Trung cực",
+    "who_code": "CV-3",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Từ rốn đo xuống 4 thốn, trên đường giữa bụng",
@@ -412,6 +445,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_20",
     "name": "Khúc cốt",
+    "who_code": "CV-2",
     "region_id": "chest_abdomen",
     "region_name": "Bụng, Ngực",
     "location": "Bờ trên xương mu (khớp vệ)",
@@ -433,6 +467,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_21",
     "name": "Đại chùy",
+    "who_code": "GV-14",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Giữa đốt sống cổ 7 ngực 1",
@@ -455,6 +490,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_22",
     "name": "Kiên ngung",
+    "who_code": "LI-15",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Chỗ lõm giữa xương mỏm cùng vai",
@@ -477,6 +513,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_23",
     "name": "Kiên tỉnh",
+    "who_code": "GB-21",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Điểm giữa Đại chùy và Kiên ngung",
@@ -498,6 +535,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_24",
     "name": "Thiên tông",
+    "who_code": "SI-11",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Chính giữa xương bả vai",
@@ -519,6 +557,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_25",
     "name": "Phế du",
+    "who_code": "BL-13",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Liên đốt D3-D4 đo ngang ra 1,5 thốn",
@@ -541,6 +580,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_26",
     "name": "Tâm du",
+    "who_code": "BL-15",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "D5-D6 đo ngang ra 1,5 thốn",
@@ -562,6 +602,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_27",
     "name": "Can du",
+    "who_code": "BL-18",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "D9-D10 đo ngang ra 1,5 thốn",
@@ -583,6 +624,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_28",
     "name": "Tỳ du",
+    "who_code": "BL-20",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "D11-D12 đo ngang ra 1,5 thốn",
@@ -605,6 +647,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_29",
     "name": "Vị du",
+    "who_code": "BL-21",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "D12-L1 đo ngang ra 1,5 thốn",
@@ -627,6 +670,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_30",
     "name": "Thận du",
+    "who_code": "BL-23",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "L2-L3 đo ngang ra 1,5 thốn",
@@ -649,6 +693,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_31",
     "name": "Đại trường du",
+    "who_code": "BL-25",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "L4-L5 đo ngang ra 1,5 thốn",
@@ -670,6 +715,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_32",
     "name": "Mệnh môn",
+    "who_code": "GV-4",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Giữa liên đốt L2-L3",
@@ -692,6 +738,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_33",
     "name": "Trường cường",
+    "who_code": "GV-1",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "Đầu chóp xương cụt",
@@ -715,6 +762,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_34",
     "name": "Hoàn khiêu",
+    "who_code": "GB-30",
     "region_id": "back",
     "region_name": "Vai, Lưng, Mông",
     "location": "BN nằm nghiêng, chân trên co, chân dưới duỗi, huyệt ở chỗ lõm sau mấu chuyển lớn xương đùi, trên cơ hông to.",
@@ -735,6 +783,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_35",
     "name": "Khúc trì",
+    "who_code": "LI-11",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Gấp khuỷu tay, huyệt ở tận cùng phía ngoài nếp gấp khuỷu tay",
@@ -758,6 +807,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_36",
     "name": "Nội quan",
+    "who_code": "PC-6",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Từ lằn chỉ cổ tay đo lên 2 thốn, giữa cơ gan tay lớn và cơ gan tay bé.",
@@ -781,6 +831,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_37",
     "name": "Ngoại quan",
+    "who_code": "TE-5",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Khu cẳng tay ra sau, cũng từ lằn chỉ cổ tay đo lên 2 thốn, đối diện huyệt Nội quan",
@@ -803,6 +854,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_38",
     "name": "Thần môn",
+    "who_code": "HT-7",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Trên lằn chỉ cổ tay, nằm trong chỗ lõm giữa xương trụ và xương đậu",
@@ -824,6 +876,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_39",
     "name": "Hợp cốc",
+    "who_code": "LI-4",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Khép chặt ngón trỏ và ngón cái, huyệt ở chỗ lồi cao nhất",
@@ -847,6 +900,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_40",
     "name": "Thập tuyên",
+    "who_code": "EX-UE11",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Đỉnh chóp của 10 đầu ngón tay, cách bờ tự do 2mm",
@@ -865,11 +919,17 @@ window.ACUPOINTS_DATA = [
     "coords": {
       "x": 21,
       "y": 50
-    }
+    },
+    "pos_3d": [
+      0.405,
+      0.735,
+      -0.025
+    ]
   },
   {
     "id": "h_41",
     "name": "Thái uyên",
+    "who_code": "LU-9",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Trên lằn chỉ cổ tay, huyệt ở bờ trong gân cơ duỗi ngón cái (châm tránh động mạch quay)",
@@ -891,6 +951,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_42",
     "name": "Xích trạch",
+    "who_code": "LU-5",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Trên lằn chỉ khuỷu tay, huyệt ở bờ ngoài gân cơ nhị đầu",
@@ -912,6 +973,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_43",
     "name": "Khúc trạch",
+    "who_code": "PC-3",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Trên lằn chỉ khuỷu tay, huyệt ở rãnh nhị đầu trong",
@@ -933,6 +995,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_44",
     "name": "Bát tà",
+    "who_code": "EX-UE9",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Tận cùng các nếp gấp của 5 ngón tay, phía ngoài có 4 huyệt",
@@ -947,11 +1010,17 @@ window.ACUPOINTS_DATA = [
     "coords": {
       "x": 22,
       "y": 48
-    }
+    },
+    "pos_3d": [
+      0.395,
+      0.775,
+      -0.038
+    ]
   },
   {
     "id": "h_45",
     "name": "Thủ tam lý",
+    "who_code": "LI-10",
     "region_id": "arm",
     "region_name": "Chi Trên",
     "location": "Dưới huyệt khúc trì 2 thốn về phía cẳng tay. Nằm trên đường nối giữa huyệt Khúc trì và Hợp cốc",
@@ -975,6 +1044,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_46",
     "name": "Phong thị",
+    "who_code": "GB-31",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Bn nằm thẳng, tay duỗi thẳng đến mặt ngoài đùi, đầu ngón tay giữa chỉ đến đâu là huyệt",
@@ -998,6 +1068,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_47",
     "name": "Huyết hải",
+    "who_code": "SP-10",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Co đầu gối, từ bờ trên xương bánh chè đo lên trên 1 thốn, vào trong 2 thốn",
@@ -1020,6 +1091,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_48",
     "name": "Lương khâu",
+    "who_code": "ST-34",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Gấp đầu gối, từ bờ trên xương bánh chè đo lên 2 thốn, ra ngoài 1 thốn",
@@ -1042,6 +1114,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_49",
     "name": "Ủy trung",
+    "who_code": "BL-40",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Giữa nếp gấp lằn trám kheo chân",
@@ -1062,6 +1135,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_50",
     "name": "Độc tỵ",
+    "who_code": "ST-35",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Chỗ lõm đầu dưới trước ngoài xương bánh chè",
@@ -1081,6 +1155,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_51",
     "name": "Túc tam lý",
+    "who_code": "ST-36",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Từ huyệt Độc tỵ đo xuống 3 thốn, huyệt ở ngoài mào chày 1 khoát ngón tay trỏ",
@@ -1106,6 +1181,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_52",
     "name": "Dương lăng tuyền",
+    "who_code": "GB-34",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Chỗ lõm giữa xương mác và xương chày, huyệt ở bên ngoài huyệt Túc tam lý 1 thốn",
@@ -1129,6 +1205,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_53",
     "name": "Thừa sơn",
+    "who_code": "BL-57",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Giữa bắp chân, nơi hợp lại của 2 cơ sinh đôi",
@@ -1149,6 +1226,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_54",
     "name": "Huyền chung",
+    "who_code": "GB-39",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Từ lồi mắt cá ngoài đo lên 3 thốn, trên đường nối từ Dương lăng tuyền đến mắt cá ngoài",
@@ -1170,6 +1248,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_55",
     "name": "Tam âm giao",
+    "who_code": "SP-6",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Từ lồi mắt cá trong đo lên 3 thốn sát sau xương chày",
@@ -1193,6 +1272,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_56",
     "name": "Côn lôn",
+    "who_code": "BL-60",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Chỗ lõm sau ngang lồi mắt cá ngoài nửa thốn",
@@ -1216,6 +1296,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_57",
     "name": "Thái xung",
+    "who_code": "LR-3",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Kẽ ngón 1-2 đo lên 2 thốn về phía mu chân",
@@ -1237,6 +1318,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_58",
     "name": "Nội đình",
+    "who_code": "ST-44",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Kẽ ngón 2-3 đo lên 0,5 thốn về phía mu chân",
@@ -1260,6 +1342,7 @@ window.ACUPOINTS_DATA = [
   {
     "id": "h_59",
     "name": "Bát phong",
+    "who_code": "EX-LE10",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Huyệt ở các kẽ ngón chân của 2 bàn chân",
@@ -1274,11 +1357,17 @@ window.ACUPOINTS_DATA = [
     "coords": {
       "x": 38,
       "y": 98
-    }
+    },
+    "pos_3d": [
+      0.082,
+      0.018,
+      0.145
+    ]
   },
   {
     "id": "h_60",
     "name": "Dũng tuyền",
+    "who_code": "KI-1",
     "region_id": "leg",
     "region_name": "Chi Dưới",
     "location": "Chỗ lõm giữa 1/3 trước và 2/3 sau gan bàn chân (khi co ngón chân lại)",

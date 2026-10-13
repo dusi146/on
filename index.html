@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#080c14">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>AcuZen - 60 Huyệt Đạo Đông Y</title>
+  <title>AcuZen - 60 Huyệt Đạo Đông Y 3D</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,14 +16,14 @@
     <header class="app-header">
       <div class="brand-wrapper">
         <div class="brand-symbol">
-          <!-- Kim châm tối giản -->
+          <!-- Biểu tượng kim châm tối giản -->
           <svg viewBox="0 0 24 24">
             <path d="M12 2v20M8 6l4-4 4 4M9 15l3 3 3-3"/>
           </svg>
         </div>
         <div>
-          <h1 class="brand-title">AcuZen</h1>
-          <div class="brand-sub">60 Huyệt Đạo Đông Y</div>
+          <h1 class="brand-title">AcuZen 3D</h1>
+          <div class="brand-sub">60 Huyệt Đạo Y Học Cổ Truyền</div>
         </div>
       </div>
       <div class="header-stats">
@@ -175,37 +175,61 @@
         </div>
       </section>
 
-      <!-- 4. VIEW: SƠ ĐỒ HUYỆT -->
+      <!-- 4. VIEW: SƠ ĐỒ 3D TOÀN NĂNG -->
       <section id="view-map" class="view-section">
-        <div class="map-controls">
-          <span style="font-size:13px;font-weight:600;color:#fff;">Chạm Vào Điểm Huyệt</span>
-          <div style="display:flex;gap:6px;">
-            <button id="switch-front" class="switch-view-btn active">Mặt Trước</button>
-            <button id="switch-back" class="switch-view-btn">Mặt Sau</button>
+        <div class="map-toolbar-3d">
+          <!-- Quick Camera Presets -->
+          <div class="cam-preset-scroll">
+            <button class="cam-preset-chip active" data-preset="all">🌐 Toàn Thân</button>
+            <button class="cam-preset-chip" data-preset="head">👤 Đầu Mặt</button>
+            <button class="cam-preset-chip" data-preset="chest">🫁 Ngực Bụng</button>
+            <button class="cam-preset-chip" data-preset="back">🔙 Vai Lưng Mông</button>
+            <button class="cam-preset-chip" data-preset="arm">🖐️ Chi Trên</button>
+            <button class="cam-preset-chip" data-preset="leg">🦵 Chi Dưới</button>
+          </div>
+
+          <!-- Secondary 3D Tools -->
+          <div class="tools-row-3d">
+            <button id="btn-toggle-core" class="tool-btn-3d active" title="Lọc riêng 60 huyệt đề cương">⭐ 60 Huyệt Ôn</button>
+            <button id="btn-toggle-meridians" class="tool-btn-3d" title="Bật 14 kinh lạc phát sáng">🌈 14 Kinh Lạc</button>
+            <button id="btn-game-3d" class="tool-btn-3d" style="color:var(--amber-light);border-color:rgba(245,158,11,0.3);">🎯 Tìm Huyệt 3D</button>
+            <button id="btn-autorotate-3d" class="tool-btn-3d" title="Tự động xoay 360 độ">🔄 Xoay</button>
+            <button id="btn-fullscreen-3d" class="tool-btn-3d" title="Phóng to toàn màn hình">⛶</button>
           </div>
         </div>
 
-        <div class="body-canvas-wrap">
-          <!-- SVG Mặt Trước -->
-          <svg id="body-svg-front" class="body-svg" viewBox="0 0 300 520">
-            <!-- Đường nét thân người tối giản thanh lịch -->
-            <path d="M 150 20 C 135 20, 130 35, 130 50 C 130 65, 138 80, 142 85 L 140 95 C 120 98, 95 105, 80 120 C 65 135, 55 175, 50 220 L 52 270 L 48 300 C 45 315, 50 320, 58 320 C 66 320, 70 305, 75 270 L 85 220 C 90 200, 100 180, 110 180 L 115 260 C 115 300, 120 340, 125 380 L 120 460 L 115 490 C 112 505, 120 510, 130 510 C 140 510, 142 495, 140 460 L 145 380 L 150 310 L 155 380 L 160 460 C 158 495, 160 510, 170 510 C 180 510, 188 505, 185 490 L 180 460 L 175 380 C 180 340, 185 300, 185 260 L 190 180 C 200 180, 210 200, 215 220 L 225 270 C 230 305, 234 320, 242 320 C 250 320, 255 315, 252 300 L 248 270 L 250 220 C 245 175, 235 135, 220 120 C 205 105, 180 98, 160 95 L 158 85 C 162 80, 170 65, 170 50 C 170 35, 165 20, 150 20 Z" 
-                  fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" stroke-width="1.8"/>
-          </svg>
+        <!-- 3D Canvas Viewport Container -->
+        <div id="canvas3d-wrap" class="canvas3d-wrap">
+          <div id="canvas3d-container" class="canvas3d-container"></div>
+          <div class="canvas3d-hint">1 ngón xoay • 2 ngón thu phóng • Chạm huyệt</div>
 
-          <!-- SVG Mặt Sau -->
-          <svg id="body-svg-back" class="body-svg" viewBox="0 0 300 520" style="display:none;">
-            <!-- Đường nét thân người mặt sau -->
-            <path d="M 150 20 C 135 20, 130 35, 130 50 C 130 65, 138 80, 142 85 L 140 95 C 120 98, 95 105, 80 120 C 65 135, 55 175, 50 220 L 52 270 L 48 300 C 45 315, 50 320, 58 320 C 66 320, 70 305, 75 270 L 85 220 C 90 200, 100 180, 110 180 L 115 260 C 115 300, 120 340, 125 380 L 120 460 L 115 490 C 112 505, 120 510, 130 510 C 140 510, 142 495, 140 460 L 145 380 L 150 310 L 155 380 L 160 460 C 158 495, 160 510, 170 510 C 180 510, 188 505, 185 490 L 180 460 L 175 380 C 180 340, 185 300, 185 260 L 190 180 C 200 180, 210 200, 215 220 L 225 270 C 230 305, 234 320, 242 320 C 250 320, 255 315, 252 300 L 248 270 L 250 220 C 245 175, 235 135, 220 120 C 205 105, 180 98, 160 95 L 158 85 C 162 80, 170 65, 170 50 C 170 35, 165 20, 150 20 Z" 
-                  fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" stroke-width="1.8"/>
-            <!-- Cột sống lưng -->
-            <path d="M 150 95 L 150 270" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3" stroke-width="1.5"/>
-          </svg>
+          <!-- 3D Game Challenge Banner -->
+          <div id="game-banner-3d" class="game-banner-3d">
+            <div class="game-banner-title">
+              <span>🎯 THỬ THÁCH TÌM HUYỆT 3D</span>
+              <span id="game-3d-score" style="color:#ffffff;">0 XP</span>
+            </div>
+            <div id="game-banner-prompt" class="game-banner-prompt">
+              Xoay và chạm vào: <strong style="color:var(--amber-light);" id="game-3d-target">Bách hội</strong>
+            </div>
+          </div>
 
-          <!-- Floating Info Popover -->
-          <div id="map-preview" class="map-point-preview">
-            <div id="preview-name" class="preview-title">Tên Huyệt</div>
-            <div id="preview-desc" class="preview-desc">Vị trí và tác dụng</div>
+          <!-- Floating Acupoint Info Popover -->
+          <div id="popover-3d-card" class="popover-3d-card">
+            <div class="popover-head">
+              <div class="popover-title">
+                <span id="popover-name">Bách hội</span>
+                <span id="popover-who" class="popover-who">[GV-20]</span>
+              </div>
+              <span id="popover-region" class="region-tag">ĐẦU MẶT CỔ</span>
+            </div>
+            <div id="popover-verse" class="popover-verse">"Bách Hội đỉnh đầu nối hai tai..."</div>
+            <div id="popover-loc" class="popover-info"><strong>Vị trí:</strong> Đỉnh đầu...</div>
+            <div id="popover-ind" class="popover-info"><strong>Tác dụng:</strong> Đau đầu, sa trực tràng...</div>
+            <div class="popover-btn-row">
+              <button id="btn-popover-detail" class="popover-btn primary">Xem Đầy Đủ Chi Tiết 📖</button>
+              <button id="btn-popover-close" class="popover-btn">Đóng</button>
+            </div>
           </div>
         </div>
       </section>
@@ -214,7 +238,7 @@
       <section id="view-atlas" class="view-section">
         <div class="search-input-wrap">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-          <input type="text" id="search-input" class="search-input" placeholder="Tìm tên huyệt, triệu chứng, số thốn...">
+          <input type="text" id="search-input" class="search-input" placeholder="Tìm tên huyệt, mã WHO, triệu chứng, số thốn...">
         </div>
 
         <!-- Bảng Thần Chú Trí Nhớ -->
@@ -224,15 +248,15 @@
             LƯU Ý VÀNG & CẤM KỴ SINH TỬ
           </div>
           <div class="cheat-row">
-            <span class="cheat-key">Thần Khuyết (Rốn):</span>
+            <span class="cheat-key">Thần Khuyết [CV-8] (Rốn):</span>
             <span class="cheat-val" style="color:var(--rose);">CẤM CHÂM (Chỉ cứu muối)</span>
           </div>
           <div class="cheat-row">
-            <span class="cheat-key">Hợp Cốc & Tam Âm Giao:</span>
+            <span class="cheat-key">Hợp Cốc [LI-4] & Tam Âm Giao [SP-6]:</span>
             <span class="cheat-val" style="color:var(--rose);">CẤM CHÂM phụ nữ mang thai</span>
           </div>
           <div class="cheat-row">
-            <span class="cheat-key">Thái Uyên (Cổ tay):</span>
+            <span class="cheat-key">Thái Uyên [LU-9] (Cổ tay):</span>
             <span class="cheat-val" style="color:var(--amber);">Châm tránh động mạch quay</span>
           </div>
           <div class="cheat-row">
@@ -240,7 +264,7 @@
             <span class="cheat-val" style="color:var(--emerald-light);">Chích nặn máu cấp cứu / lẹo</span>
           </div>
           <div class="cheat-row">
-            <span class="cheat-key">Trường Cường:</span>
+            <span class="cheat-key">Trường Cường [GV-1]:</span>
             <span class="cheat-val" style="color:var(--cyan);">Cấp cứu Thượng mã phong</span>
           </div>
         </div>
@@ -250,13 +274,13 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             QUY TẮC ĐỐT SỐNG & SỐ THỐN
           </div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D3-D4:</span><span class="cheat-val">Phế Du (Phổi)</span></div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D5-D6:</span><span class="cheat-val">Tâm Du (Tim)</span></div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D9-D10:</span><span class="cheat-val">Can Du (Gan)</span></div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D11-D12:</span><span class="cheat-val">Tỳ Du (Lách)</span></div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D12-L1:</span><span class="cheat-val">Vị Du (Dạ dày)</span></div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn L2-L3:</span><span class="cheat-val">Thận Du (Thận)</span></div>
-          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn L4-L5:</span><span class="cheat-val">Đại Trường Du (Ruột già)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D3-D4:</span><span class="cheat-val">Phế Du [BL-13] (Phổi)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D5-D6:</span><span class="cheat-val">Tâm Du [BL-15] (Tim)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D9-D10:</span><span class="cheat-val">Can Du [BL-18] (Gan)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D11-D12:</span><span class="cheat-val">Tỳ Du [BL-20] (Lách)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn D12-L1:</span><span class="cheat-val">Vị Du [BL-21] (Dạ dày)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn L2-L3:</span><span class="cheat-val">Thận Du [BL-23] (Thận)</span></div>
+          <div class="cheat-row"><span class="cheat-key">Đo ngang 1.5 thốn L4-L5:</span><span class="cheat-val">Đại Trường Du [BL-25]</span></div>
           <div class="cheat-row"><span class="cheat-key">Bộ 3 thốn kinh điển:</span><span class="cheat-val">Túc Tam Lý, Tam Âm Giao, Huyền Chung, Quan Nguyên</span></div>
         </div>
 
@@ -295,7 +319,7 @@
           <circle cx="12" cy="5" r="3"/>
           <path d="M12 8v8M8 12h8M9 22l3-6 3 6"/>
         </svg>
-        <span>Sơ Đồ</span>
+        <span>Sơ Đồ 3D</span>
       </button>
 
       <button class="nav-btn" data-view="atlas">
@@ -314,9 +338,17 @@
 
   </div>
 
-  <!-- SCRIPTS -->
+  <!-- 3D & CORE ASSETS -->
+  <script src="assets/three.min.js"></script>
+  <script src="assets/GLTFLoader.js"></script>
+  <script src="assets/model-data.js"></script>
+  <script src="assets/model-utils.js"></script>
+  <script src="assets/meridians-data.js"></script>
+  
+  <!-- APP DATA & SCRIPTS -->
   <script src="acupoints_data.js"></script>
   <script src="clinical_cases.js"></script>
+  <script src="viewer3d.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
