@@ -1,0 +1,474 @@
+[
+  {
+    "id": "h_1",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Bách hội",
+    "location": "Đỉnh đầu, nơi gặp nhau giữa 2 đỉnh tai và đường giữa",
+    "indication": "Đau đầu, cảm cúm, sa trực tràng"
+  },
+  {
+    "id": "h_2",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Ấn đường",
+    "location": "Chỗ lõm giữa 2 lông mày",
+    "indication": "Đau đầu, viêm xoang, đau mắt đỏ, chắp, lẹo."
+  },
+  {
+    "id": "h_3",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Thái dương",
+    "location": "Sau đuôi mắt ngoài 1 thốn, sát bờ trên mỏm tiếp xương thái dương",
+    "indication": "Đau đầu, đau răng, đau mắt đỏ."
+  },
+  {
+    "id": "h_4",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Nghinh hương",
+    "location": "Từ cánh mũi đo ra ngoài 1/5 thốn",
+    "indication": "Ngạt mũi, chảy nước mũi, liệt thần kinh VII ngoại biên."
+  },
+  {
+    "id": "h_5",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Nhân trung",
+    "location": "1/3 trên rãnh nhân trung",
+    "indication": "Choáng, ngất, liệt thần kinh VII ngoại biên."
+  },
+  {
+    "id": "h_6",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Địa thương",
+    "location": "Ngoài khóe miệng 2/5 thốn",
+    "indication": "Đau răng, liệt thần kinh VII ngoại biên, nói khó."
+  },
+  {
+    "id": "h_7",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Giáp xa",
+    "location": "Từ huyệt địa thương đo ra sau 2 thốn về phía góc hàm, tương ứng bờ trên cơ nhai",
+    "indication": "Liệt TK VII ngoại biên, đau răng, thất ngôn"
+  },
+  {
+    "id": "h_8",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Phong trì",
+    "location": "Từ xương chẩm cổ 1 đo ngang ra 2 thốn, huyệt ở chỗ lõm ngoài cơ thang sau cơ ức đòn chũm",
+    "indication": "Cảm mạo, đau đầu, đau vai gáy"
+  },
+  {
+    "id": "h_9",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Toản trúc",
+    "location": "Chỗ lõm bờ trong cung lông mày",
+    "indication": "Nhức đầu, viêm xoang trán, liệt TK VII ngoại biên, các bệnh về mắt."
+  },
+  {
+    "id": "h_10",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Liêm tuyền",
+    "location": "Chính giữa bờ trên xương móng",
+    "indication": "Cứng lưỡi, nói khó, thất ngôn, loạn cảm họng"
+  },
+  {
+    "id": "h_11",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "name": "Ế phong",
+    "location": "Chỗ lõm giữa xương hàm dưới và xương chũm, ấn dái tai tới đâu là huyệt",
+    "indication": "Ù tai, điếc tai, nghe kém, liệt TK VII ngoại biên."
+  },
+  {
+    "id": "h_12",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Thiên đột",
+    "location": "Chỗ lõm trên bờ xương ức",
+    "indication": "Viêm họng, ho khó thở, viêm phế quản"
+  },
+  {
+    "id": "h_13",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Đản trung",
+    "location": "Chính giữa điểm nối giữa 2 núm vú (nam), ngang liên sườn 4 (nữ)",
+    "indication": "Khó thở, viêm tuyến vú, tắc tia sữa."
+  },
+  {
+    "id": "h_14",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Trung phủ",
+    "location": "Liên sườn 2, rãnh delta ngực",
+    "indication": "Viêm phế quản, đau TK liên sườn, viêm tuyến vú, ho hen"
+  },
+  {
+    "id": "h_15",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Trung quản",
+    "location": "Giữa con đường từ mũi kiếm xương ức tới rốn",
+    "indication": "Nôn, nấc, táo bón, đau thượng vị."
+  },
+  {
+    "id": "h_16",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Thần khuyết",
+    "location": "Rốn",
+    "indication": "Ỉa chảy do lạnh, (chỉ được cứu cách muối, cấm châm.)"
+  },
+  {
+    "id": "h_17",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Thiên khu",
+    "location": "Từ rốn đo ngang ra 2 thốn 2 bên",
+    "indication": "Đau bụng, ỉa chảy, đau thượng vị, đầy bụng"
+  },
+  {
+    "id": "h_18",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Quan nguyên",
+    "location": "Từ rốn đo xuống 3 thốn, trên đường giữa bụng",
+    "indication": "Đau hạ vị, bí đái, đái dầm, các bệnh tiết niệu sinh dục."
+  },
+  {
+    "id": "h_19",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Trung cực",
+    "location": "Từ rốn đo xuống 4 thốn, trên đường giữa bụng",
+    "indication": "Bí đái, đái dầm, di tinh"
+  },
+  {
+    "id": "h_20",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "name": "Khúc cốt",
+    "location": "Bờ trên xương mu (khớp vệ)",
+    "indication": "Bí đái, đái dầm, di tinh"
+  },
+  {
+    "id": "h_21",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Đại chùy",
+    "location": "Giữa đốt sống cổ 7 ngực 1",
+    "indication": "Sốt cao, cảm cúm, cảm mạo, đau đầu"
+  },
+  {
+    "id": "h_22",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Kiên ngung",
+    "location": "Chỗ lõm giữa xương mỏm cùng vai",
+    "indication": "Đau khớp vai, đau đám rối TK cánh tay (gồm các dây TK đi từ cổ 2 đến cổ 7, TK quay, trụ, giữa mũ), liệt chi trên, liệt TK mũ."
+  },
+  {
+    "id": "h_23",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Kiên tỉnh",
+    "location": "Điểm giữa Đại chùy và Kiên ngung",
+    "indication": "Đau vai gáy, đau lưng, viêm tuyến vú"
+  },
+  {
+    "id": "h_24",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Thiên tông",
+    "location": "Chính giữa xương bả vai",
+    "indication": "Đau vai gáy, đau lưng, đau dây TK liên sườn"
+  },
+  {
+    "id": "h_25",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Phế du",
+    "location": "Liên đốt D3-D4 đo ngang ra 1,5 thốn",
+    "indication": "Ho hen, khó thở, chắp lẹo (chích nặn máu)."
+  },
+  {
+    "id": "h_26",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Tâm du",
+    "location": "D5-D6 đo ngang ra 1,5 thốn",
+    "indication": "Mất ngủ, di tinh, đái dầm"
+  },
+  {
+    "id": "h_27",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Can du",
+    "location": "D9-D10 đo ngang ra 1,5 thốn",
+    "indication": "Cao huyết áp, đau mắt đỏ, đau dạ dày"
+  },
+  {
+    "id": "h_28",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Tỳ du",
+    "location": "D11-D12 đo ngang ra 1,5 thốn",
+    "indication": "Đầy bụng, đau thượng vị, rối loạn tiêu hóa, chậm tiêu"
+  },
+  {
+    "id": "h_29",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Vị du",
+    "location": "D12-L1 đo ngang ra 1,5 thốn",
+    "indication": "Đau dạ dày, chậm tiêu, nôn, đày bụng."
+  },
+  {
+    "id": "h_30",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Thận du",
+    "location": "L2-L3 đo ngang ra 1,5 thốn",
+    "indication": "Đau lưng, đau TK đùi, ù tai, di tinh"
+  },
+  {
+    "id": "h_31",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Đại trường du",
+    "location": "L4-L5 đo ngang ra 1,5 thốn",
+    "indication": "Đau lưng, đau TK tọa, trĩ"
+  },
+  {
+    "id": "h_32",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Mệnh môn",
+    "location": "Giữa liên đốt L2-L3",
+    "indication": "Đau lưng, di tinh, đái dầm, ỉa chảy mãn tính"
+  },
+  {
+    "id": "h_33",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Trường cường",
+    "location": "Đầu chóp xương cụt",
+    "indication": "ỉa chảy mãn tính, trĩ, đau lưng, sa trực tràng, đặc biệt điều trị Thượng mã phong"
+  },
+  {
+    "id": "h_34",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "name": "Hoàn khiêu",
+    "location": "BN nằm nghiêng, chân trên co, chân dưới duỗi, huyệt ở chỗ lõm sau mấu chuyển lớn xương đùi, trên cơ hông to.",
+    "indication": "Đau khớp háng, đau TK tọa (châm sâu 2-3cm)"
+  },
+  {
+    "id": "h_35",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Khúc trì",
+    "location": "Gấp khuỷu tay, huyệt ở tận cùng phía ngoài nếp gấp khuỷu tay",
+    "indication": "Đau TK quay, đau khớp khuỷu, liệt chi trên, cảm mạo, sốt."
+  },
+  {
+    "id": "h_36",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Nội quan",
+    "location": "Từ lằn chỉ cổ tay đo lên 2 thốn, giữa cơ gan tay lớn và cơ gan tay bé.",
+    "indication": "Đau khớp cổ tay, đau TK giữa, sốt, mất ngủ, hồi hộp."
+  },
+  {
+    "id": "h_37",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Ngoại quan",
+    "location": "Khu cẳng tay ra sau, cũng từ lằn chỉ cổ tay đo lên 2 thốn, đối diện huyệt Nội quan",
+    "indication": "Đau khớp cổ tay, đau nửa đầu, liệt chi trên, cảm mạo."
+  },
+  {
+    "id": "h_38",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Thần môn",
+    "location": "Trên lằn chỉ cổ tay, nằm trong chỗ lõm giữa xương trụ và xương đậu",
+    "indication": "Mất ngủ, đau khớp cổ tay, hồi hộp."
+  },
+  {
+    "id": "h_39",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Hợp cốc",
+    "location": "Khép chặt ngón trỏ và ngón cái, huyệt ở chỗ lồi cao nhất",
+    "indication": "Đau đầu, đau răng, liệt dây TK VII ngoại biên, liệt chi trên, sốt cao cảm mạo."
+  },
+  {
+    "id": "h_40",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Thập tuyên",
+    "location": "Đỉnh chóp của 10 đầu ngón tay, cách bờ tự do 2mm",
+    "indication": "Cấp cứu choáng, ngất, hôn mê (chích nặn máu)"
+  },
+  {
+    "id": "h_41",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Thái uyên",
+    "location": "Trên lằn chỉ cổ tay, huyệt ở bờ trong gân cơ duỗi ngón cái (châm tránh động mạch quay)",
+    "indication": "Ho hen, viêm phế quản"
+  },
+  {
+    "id": "h_42",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Xích trạch",
+    "location": "Trên lằn chỉ khuỷu tay, huyệt ở bờ ngoài gân cơ nhị đầu",
+    "indication": "Đau khớp khuỷu, ho, sốt"
+  },
+  {
+    "id": "h_43",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Khúc trạch",
+    "location": "Trên lằn chỉ khuỷu tay, huyệt ở rãnh nhị đầu trong",
+    "indication": "Đau khớp khuỷu, sốt cao, nôn"
+  },
+  {
+    "id": "h_44",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Bát tà",
+    "location": "Tận cùng các nếp gấp của 5 ngón tay, phía ngoài có 4 huyệt",
+    "indication": "Viêm khớp bàn tay"
+  },
+  {
+    "id": "h_45",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "name": "Thủ tam lý",
+    "location": "Dưới huyệt khúc trì 2 thốn về phía cẳng tay. Nằm trên đường nối giữa huyệt Khúc trì và Hợp cốc",
+    "indication": "Liệt chi trên, đau nhức cổ - vai- cánh tay, nôn mửa, nấc, say tàu xe."
+  },
+  {
+    "id": "h_46",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Phong thị",
+    "location": "Bn nằm thẳng, tay duỗi thẳng đến mặt ngoài đùi, đầu ngón tay giữa chỉ đến đâu là huyệt",
+    "indication": "Liệt nửa người, liệt chi dưới, đau TK đùi, mẩn ngứa, kinh nguyệt không đều"
+  },
+  {
+    "id": "h_47",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Huyết hải",
+    "location": "Co đầu gối, từ bờ trên xương bánh chè đo lên trên 1 thốn, vào trong 2 thốn",
+    "indication": "Đau khớp gối, đau TK đùi, mẩn ngứa, kinh nguyệt không đều."
+  },
+  {
+    "id": "h_48",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Lương khâu",
+    "location": "Gấp đầu gối, từ bờ trên xương bánh chè đo lên 2 thốn, ra ngoài 1 thốn",
+    "indication": "Đau khớp gối, đau TK đùi, đau dạ dày, viêm tuyến vú."
+  },
+  {
+    "id": "h_49",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Ủy trung",
+    "location": "Giữa nếp gấp lằn trám kheo chân",
+    "indication": "Đau từ thắt lưng trở xuống, đau TK tọa."
+  },
+  {
+    "id": "h_50",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Độc tỵ",
+    "location": "Chỗ lõm đầu dưới trước ngoài xương bánh chè",
+    "indication": "Đau khớp gối"
+  },
+  {
+    "id": "h_51",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Túc tam lý",
+    "location": "Từ huyệt Độc tỵ đo xuống 3 thốn, huyệt ở ngoài mào chày 1 khoát ngón tay trỏ",
+    "indication": "Đau khớp gối, đau TK tọa, kích thích tiêu hóa cảm mạo, liệt chi dưới, đau đầu, đau vai gáy."
+  },
+  {
+    "id": "h_52",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Dương lăng tuyền",
+    "location": "Chỗ lõm giữa xương mác và xương chày, huyệt ở bên ngoài huyệt Túc tam lý 1 thốn",
+    "indication": "Đau khớp gối, đau TK tọa, đau vai gáy, đau nửa đầu, liệt chi dưới."
+  },
+  {
+    "id": "h_53",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Thừa sơn",
+    "location": "Giữa bắp chân, nơi hợp lại của 2 cơ sinh đôi",
+    "indication": "Đau TK tọa, chuột rút"
+  },
+  {
+    "id": "h_54",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Huyền chung",
+    "location": "Từ lồi mắt cá ngoài đo lên 3 thốn, trên đường nối từ Dương lăng tuyền đến mắt cá ngoài",
+    "indication": "Liệt nửa người, đau vai gáy, đau mạn sườn"
+  },
+  {
+    "id": "h_55",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Tam âm giao",
+    "location": "Từ lồi mắt cá trong đo lên 3 thốn sát sau xương chày",
+    "indication": "Mất ngủ, bí đái, đái dầm, nhức đầu, rong kinh"
+  },
+  {
+    "id": "h_56",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Côn lôn",
+    "location": "Chỗ lõm sau ngang lồi mắt cá ngoài nửa thốn",
+    "indication": "Cao huyết áp, đau đầu, đau lưng, đau TK tọa, đau khớp cổ chân"
+  },
+  {
+    "id": "h_57",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Thái xung",
+    "location": "Kẽ ngón 1-2 đo lên 2 thốn về phía mu chân",
+    "indication": "Cao huyết áp, kinh nguyệt không đều, đau đầu."
+  },
+  {
+    "id": "h_58",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Nội đình",
+    "location": "Kẽ ngón 2-3 đo lên 0,5 thốn về phía mu chân",
+    "indication": "Đau răng, đầy bụng, nôn mửa, ăn kém, đại tiện phân nát."
+  },
+  {
+    "id": "h_59",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "name": "Bát phong",
+    "location": "Huyệt ở các kẽ ngón chân của 2 bàn chân",
+    "indication": "Đau khớp ngón chân"
+  }
+]

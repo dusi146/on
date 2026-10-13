@@ -1,0 +1,1302 @@
+// CƠ SỞ DỮ LIỆU 60 HUYỆT ĐẠO CHÂM CỨU Y HỌC CỔ TRUYỀN
+// Tích hợp thơ lục bát, vè nhớ, mẹo thông minh, lưu ý vàng
+window.ACUPOINTS_DATA = [
+  {
+    "id": "h_1",
+    "name": "Bách hội",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Đỉnh đầu, nơi gặp nhau giữa 2 đỉnh tai và đường giữa",
+    "indication": "Đau đầu, cảm cúm, sa trực tràng",
+    "special_note": "Hội của trăm mạch. Trị chứng khí hư hạ hãm (sa trực tràng, sa tử cung).",
+    "mnemonic": "Bách Hội đỉnh đầu nối hai tai / Đau đầu, sa trĩ bấm hoài hết ngay!",
+    "memory_trick": "Bách = 100, Hội = tụ họp. Đỉnh chóp đầu (nơi 2 đỉnh tai nối qua đường giữa). Nhớ cặp bài trùng: Đau đầu + Sa trực tràng.",
+    "tags": [
+      "đau đầu",
+      "cảm cúm",
+      "sa trực tràng"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 50,
+      "y": 4
+    }
+  },
+  {
+    "id": "h_2",
+    "name": "Ấn đường",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Chỗ lõm giữa 2 lông mày",
+    "indication": "Đau đầu, viêm xoang, đau mắt đỏ, chắp, lẹo.",
+    "special_note": "Thao tác day ấn nhẹ nhàng giúp thư giãn thần kinh, cắt cơn nhức trán nhanh chóng.",
+    "mnemonic": "Hai mày chính giữa Ấn Đường xinh / Đau đầu, chắp lẹo, xoang trán tiêu tan.",
+    "memory_trick": "Ấn tượng nằm giữa trán! Ngay ngã ba giữa 2 đầu lông mày. Cứ nhức trán, xoang mũi, mắt chắp lẹo là day Ấn Đường.",
+    "tags": [
+      "đau đầu",
+      "viêm xoang",
+      "đau mắt đỏ",
+      "chắp lẹo"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 50,
+      "y": 8
+    }
+  },
+  {
+    "id": "h_3",
+    "name": "Thái dương",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Sau đuôi mắt ngoài 1 thốn, sát bờ trên mỏm tiếp xương thái dương",
+    "indication": "Đau đầu, đau răng, đau mắt đỏ.",
+    "special_note": "Chỗ lõm mềm sau mắt. Châm xiên hoặc nặn ít giọt máu khi đau mắt đỏ cấp.",
+    "mnemonic": "Sau đuôi mắt một thốn Thái Dương / Đau đầu, nhức mắt, đau răng dịu liền.",
+    "memory_trick": "Đuôi mắt đo ra sau 1 thốn. Huyệt vàng trị 'Bộ 3 Đau': Đau đầu - Đau mắt đỏ - Đau răng.",
+    "tags": [
+      "đau đầu",
+      "đau răng",
+      "đau mắt đỏ"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 56,
+      "y": 8
+    }
+  },
+  {
+    "id": "h_4",
+    "name": "Nghinh hương",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Từ cánh mũi đo ra ngoài 1/5 thốn",
+    "indication": "Ngạt mũi, chảy nước mũi, liệt thần kinh VII ngoại biên.",
+    "special_note": "Châm nghiêng nhẹ về phía sống mũi. Giúp thông khiếu khứu giác tức thì.",
+    "mnemonic": "Cánh mũi một phần năm thốn thôi / Nghinh Hương thông mũi, miệng cười liệt dây.",
+    "memory_trick": "Nghinh = đón rước, Hương = mùi thơm. Mũi ngạt không ngửi thấy hương thơm thì bấm Nghinh Hương! Đo ra ngoài 1/5 thốn từ chân cánh mũi.",
+    "tags": [
+      "ngạt mũi",
+      "chảy nước mũi",
+      "liệt TK VII"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 53,
+      "y": 10.5
+    }
+  },
+  {
+    "id": "h_5",
+    "name": "Nhân trung",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "1/3 trên rãnh nhân trung",
+    "indication": "Choáng, ngất, liệt thần kinh VII ngoại biên.",
+    "special_note": "Huyệt cấp cứu ngất đầu bảng! Bấm móng tay thẳng góc vào 1/3 trên.",
+    "mnemonic": "Một phần ba trên rãnh Nhân Trung / Cứu người ngất xỉu, liệt rung mặt mày.",
+    "memory_trick": "Rãnh môi trên chia 3 đoạn: lấy đoạn 1/3 TRÊN sát chân mũi. Cấp cứu ngất, tụt huyết áp, méo mồm liệt mặt.",
+    "tags": [
+      "choáng",
+      "ngất",
+      "cấp cứu",
+      "liệt TK VII"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 50,
+      "y": 11.5
+    }
+  },
+  {
+    "id": "h_6",
+    "name": "Địa thương",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Ngoài khóe miệng 2/5 thốn",
+    "indication": "Đau răng, liệt thần kinh VII ngoại biên, nói khó.",
+    "special_note": "Thường phối hợp xuyên kim tới Giáp Xa để trị méo miệng, chảy nước dãi.",
+    "mnemonic": "Khóe miệng hai phần năm thốn ra / Địa Thương răng buốt, khó cười nói ngay.",
+    "memory_trick": "Địa = đất, Thương = kho lương thực (miệng ăn cơm). Ngoài mép 2/5 thốn. Chuyên trị méo miệng, chảy dãi, đau răng.",
+    "tags": [
+      "đau răng",
+      "liệt TK VII",
+      "nói khó"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 53.5,
+      "y": 12.8
+    }
+  },
+  {
+    "id": "h_7",
+    "name": "Giáp xa",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Từ huyệt địa thương đo ra sau 2 thốn về phía góc hàm, tương ứng bờ trên cơ nhai",
+    "indication": "Liệt TK VII ngoại biên, đau răng, thất ngôn",
+    "special_note": "Xác định nhanh: cắn chặt răng lại, chỗ cơ nhai nổi gồ cao nhất và lõm khi há miệng.",
+    "mnemonic": "Địa Thương lùi lại hai thốn mau / Giáp Xa cơ nhai cắn chặt hết rầu răng.",
+    "memory_trick": "Giáp = xương hàm, Xa = cỗ xe nhai. Cắn chặt hàm thấy cơ gồ lên. Đo từ Địa Thương ra sau 2 thốn. Trị liệt VII, đau răng hàm, thất ngôn.",
+    "tags": [
+      "liệt TK VII",
+      "đau răng",
+      "thất ngôn"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 56.5,
+      "y": 13.5
+    }
+  },
+  {
+    "id": "h_8",
+    "name": "Phong trì",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Từ xương chẩm cổ 1 đo ngang ra 2 thốn, huyệt ở chỗ lõm ngoài cơ thang sau cơ ức đòn chũm",
+    "indication": "Cảm mạo, đau đầu, đau vai gáy",
+    "special_note": "Ao chứa phong tà sau gáy. Không châm quá sâu hướng lên não.",
+    "mnemonic": "Sau gáy cơ thang chỗ lõm sâu / Phong Trì xua sạch gió hàn vai đau.",
+    "memory_trick": "Phong = gió, Trì = cái ao. Cái ao sau gáy gió hay tụ vào gây trúng gió cảm mạo, cứng cổ vai gáy. Đo ngang 2 thốn từ xương chẩm C1.",
+    "tags": [
+      "cảm mạo",
+      "đau đầu",
+      "đau vai gáy"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 44,
+      "y": 12
+    }
+  },
+  {
+    "id": "h_9",
+    "name": "Toản trúc",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Chỗ lõm bờ trong cung lông mày",
+    "indication": "Nhức đầu, viêm xoang trán, liệt TK VII ngoại biên, các bệnh về mắt.",
+    "special_note": "Day tròn hoặc luồn kim dưới da. Điểm đầu của kinh Bàng quang.",
+    "mnemonic": "Đầu trong lông mày Toản Trúc hay / Trị nhức đầu trán, mắt sáng mê say.",
+    "memory_trick": "Toản = tụ lại, Trúc = cây trúc (lông mày như lá trúc). Nằm ở đầu TRONG lông mày (ngay trên gốc mũi). Trị bệnh trán, mắt, liệt mặt.",
+    "tags": [
+      "nhức đầu",
+      "viêm xoang trán",
+      "liệt TK VII",
+      "bệnh mắt"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 48.5,
+      "y": 7.8
+    }
+  },
+  {
+    "id": "h_10",
+    "name": "Liêm tuyền",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Chính giữa bờ trên xương móng",
+    "indication": "Cứng lưỡi, nói khó, thất ngôn, loạn cảm họng",
+    "special_note": "Châm kim xiên hướng chếch lên gốc lưỡi. Cực kỳ nhạy khi bệnh nhân tai biến cứng lưỡi.",
+    "mnemonic": "Bờ trên xương móng Liêm Tuyền đây / Cứng lưỡi nói khó thông ngay giọng vàng.",
+    "memory_trick": "Tuyền = dòng suối ngọt dưới cuống họng. Ngay bờ trên xương móng ở cổ. Cứ cứng lưỡi, ngọng, cấm khẩu, họng nuốt vướng là Liêm Tuyền.",
+    "tags": [
+      "cứng lưỡi",
+      "nói khó",
+      "thất ngôn",
+      "loạn cảm họng"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 50,
+      "y": 16.5
+    }
+  },
+  {
+    "id": "h_11",
+    "name": "Ế phong",
+    "region_id": "head",
+    "region_name": "Đầu, Mặt, Cổ",
+    "location": "Chỗ lõm giữa xương hàm dưới và xương chũm, ấn dái tai tới đâu là huyệt",
+    "indication": "Ù tai, điếc tai, nghe kém, liệt TK VII ngoại biên.",
+    "special_note": "Mẹo chuẩn xác nhất: ép dái tai sát vào rãnh sau tai, đỉnh dái tai chỉ đúng vào huyệt.",
+    "mnemonic": "Ấn dái tai vào trúng Ế Phong / Ù tai điếc đặc, méo mồm hồi sinh.",
+    "memory_trick": "Ế = che lấp, Phong = gió. Nấp sau dái tai! Ép dái tai vào đâu thì huyệt ở đó. Trị bộ đôi tai (ù, điếc) + mặt (liệt VII).",
+    "tags": [
+      "ù tai",
+      "điếc tai",
+      "nghe kém",
+      "liệt TK VII"
+    ],
+    "body_part": "head",
+    "coords": {
+      "x": 57.5,
+      "y": 12.5
+    }
+  },
+  {
+    "id": "h_12",
+    "name": "Thiên đột",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Chỗ lõm trên bờ xương ức",
+    "indication": "Viêm họng, ho khó thở, viêm phế quản",
+    "special_note": "Châm kim qua da rồi hạ đốc kim châm sát sau xương ức hướng xuống dưới. Tránh đâm thẳng vào khí quản.",
+    "mnemonic": "Chỗ lõm ức trên ấy Thiên Đột / Cắt cơn ho rũ, viêm họng khó thở.",
+    "memory_trick": "Thiên = trời, Đột = đột ngột. Hõm xương ức ngay cổ họng. Khí nghịch ho hen khó thở kịch phát thì châm Thiên Đột.",
+    "tags": [
+      "viêm họng",
+      "ho khó thở",
+      "viêm phế quản"
+    ],
+    "body_part": "chest",
+    "coords": {
+      "x": 50,
+      "y": 20
+    }
+  },
+  {
+    "id": "h_13",
+    "name": "Đản trung",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Chính giữa điểm nối giữa 2 núm vú (nam), ngang liên sườn 4 (nữ)",
+    "indication": "Khó thở, viêm tuyến vú, tắc tia sữa.",
+    "special_note": "Huyệt Hội của Khí toàn thân. Châm luồn kim dưới da, không đâm thẳng góc.",
+    "mnemonic": "Giữa hai đầu vú Đản Trung nằm / Viêm vú, tắc sữa, thở tức ngực tan.",
+    "memory_trick": "Đản = giữa ngực. Nam: kẻ đường nối 2 đầu ti; Nữ: khoang liên sườn 4 đường giữa ngực. Trị ngực tức khó thở, tắc tia sữa cho mẹ bỉm.",
+    "tags": [
+      "khó thở",
+      "viêm tuyến vú",
+      "tắc tia sữa"
+    ],
+    "body_part": "chest",
+    "coords": {
+      "x": 50,
+      "y": 26.5
+    }
+  },
+  {
+    "id": "h_14",
+    "name": "Trung phủ",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Liên sườn 2, rãnh delta ngực",
+    "indication": "Viêm phế quản, đau TK liên sườn, viêm tuyến vú, ho hen",
+    "special_note": "Mộ huyệt của Phế. Không châm quá sâu hướng vào khoang màng phổi.",
+    "mnemonic": "Rãnh delta ngực liên sườn hai / Trung Phủ hen phế quản êm ru.",
+    "memory_trick": "Trung Phủ = Phủ của Phế khí. Nằm ở liên sườn 2 rãnh delta ngực (dưới xương đòn). Trị ho hen, viêm phế quản, đau ngực liên sườn.",
+    "tags": [
+      "viêm phế quản",
+      "đau TK liên sườn",
+      "viêm tuyến vú",
+      "ho hen"
+    ],
+    "body_part": "chest",
+    "coords": {
+      "x": 41,
+      "y": 22.5
+    }
+  },
+  {
+    "id": "h_15",
+    "name": "Trung quản",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Giữa con đường từ mũi kiếm xương ức tới rốn",
+    "indication": "Nôn, nấc, táo bón, đau thượng vị.",
+    "special_note": "Mộ huyệt của Vị (dạ dày), hội của Phủ. Đệ nhất huyệt chữa mọi bệnh tiêu hóa trên.",
+    "mnemonic": "Mũi ức tới rốn lấy điểm giữa / Trung Quản nôn nấc, dạ dày êm re.",
+    "memory_trick": "Trung Quản quản lý dạ dày ở giữa bụng. Lấy trung điểm đoạn từ mũi kiếm xương ức xuống rốn (4 thốn). Cứ đau thượng vị nôn nấc là chọn ngay.",
+    "tags": [
+      "nôn",
+      "nấc",
+      "táo bón",
+      "đau thượng vị"
+    ],
+    "body_part": "abdomen",
+    "coords": {
+      "x": 50,
+      "y": 32
+    }
+  },
+  {
+    "id": "h_16",
+    "name": "Thần khuyết",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Rốn",
+    "indication": "Ỉa chảy do lạnh, (chỉ được cứu cách muối, cấm châm.)",
+    "special_note": "CỰC KỲ QUAN TRỌNG: CẤM CHÂM KIM! Chỉ được cứu ngải cách muối hoặc cách gừng.",
+    "mnemonic": "Chính giữa rốn sâu Thần Khuyết đây / Chỉ cứu cách muối, cấm châm kim nha!",
+    "memory_trick": "RỐN = THẦN KHUYẾT! Lưu ý tử huyệt trong bài thi: CẤM CHÂM, CHỈ CỨU MUỐI trị tiêu chảy do lạnh hàn tích tụ.",
+    "tags": [
+      "ỉa chảy do lạnh",
+      "cấm châm",
+      "cứu cách muối"
+    ],
+    "body_part": "abdomen",
+    "coords": {
+      "x": 50,
+      "y": 38.5
+    }
+  },
+  {
+    "id": "h_17",
+    "name": "Thiên khu",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Từ rốn đo ngang ra 2 thốn 2 bên",
+    "indication": "Đau bụng, ỉa chảy, đau thượng vị, đầy bụng",
+    "special_note": "Mộ huyệt của Đại trường (ruột già). Rất nhạy với rối loạn tiêu hóa cấp.",
+    "mnemonic": "Từ rốn đo ngang hai thốn sang / Thiên Khu đau bụng, tiêu chảy khỏi liền.",
+    "memory_trick": "Thiên Khu là 2 cửa sổ cạnh rốn! Từ rốn đo ngang ra 2 thốn mỗi bên. Trị toàn bộ chứng ruột: đau bụng, đi ngoài, đầy trướng.",
+    "tags": [
+      "đau bụng",
+      "ỉa chảy",
+      "đau thượng vị",
+      "đầy bụng"
+    ],
+    "body_part": "abdomen",
+    "coords": {
+      "x": 45,
+      "y": 38.5
+    }
+  },
+  {
+    "id": "h_18",
+    "name": "Quan nguyên",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Từ rốn đo xuống 3 thốn, trên đường giữa bụng",
+    "indication": "Đau hạ vị, bí đái, đái dầm, các bệnh tiết niệu sinh dục.",
+    "special_note": "Cửa ngõ cất giữ Nguyên khí bẩm sinh dưới Đan điền. Bổ hư tổn cực mạnh.",
+    "mnemonic": "Rốn đo thẳng xuống ba thốn sâu / Quan Nguyên bổ thận, tiểu đêm đái dầm.",
+    "memory_trick": "Quan = the chốt, Nguyên = nguyên khí. Từ rốn đo xuống 3 thốn (4 ngón tay ngang). Chuyên trị tiết niệu - sinh dục: bí tiểu, đái dầm, đau hạ vị.",
+    "tags": [
+      "đau hạ vị",
+      "bí đái",
+      "đái dầm",
+      "bệnh tiết niệu sinh dục"
+    ],
+    "body_part": "abdomen",
+    "coords": {
+      "x": 50,
+      "y": 42.5
+    }
+  },
+  {
+    "id": "h_19",
+    "name": "Trung cực",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Từ rốn đo xuống 4 thốn, trên đường giữa bụng",
+    "indication": "Bí đái, đái dầm, di tinh",
+    "special_note": "Mộ huyệt của Bàng quang. Trước khi châm phải bảo bệnh nhân đi tiểu sạch.",
+    "mnemonic": "Rốn đo thẳng xuống bốn thốn tròn / Trung Cực bí đái, di tinh phục hồi.",
+    "memory_trick": "Rốn xuống 3 thốn là Quan Nguyên -> thêm 1 thốn nữa (4 thốn) là Trung Cực (trên xương mu 1 thốn). Trị bí đái, đái dầm, di tinh.",
+    "tags": [
+      "bí đái",
+      "đái dầm",
+      "di tinh"
+    ],
+    "body_part": "abdomen",
+    "coords": {
+      "x": 50,
+      "y": 44.5
+    }
+  },
+  {
+    "id": "h_20",
+    "name": "Khúc cốt",
+    "region_id": "chest_abdomen",
+    "region_name": "Bụng, Ngực",
+    "location": "Bờ trên xương mu (khớp vệ)",
+    "indication": "Bí đái, đái dầm, di tinh",
+    "special_note": "Nằm ngay chính giữa khớp vệ. Cũng phải tiểu sạch trước khi châm.",
+    "mnemonic": "Bờ trên xương mu ấy Khúc Cốt / Đái dầm, bí đái, di tinh dứt liền.",
+    "memory_trick": "Khúc cốt = xương cong (xương mu). Rốn đo xuống đúng 5 thốn chạm bờ xương mu. Đồng tác dụng Trung Cực: bí đái, đái dầm, di tinh.",
+    "tags": [
+      "bí đái",
+      "đái dầm",
+      "di tinh"
+    ],
+    "body_part": "abdomen",
+    "coords": {
+      "x": 50,
+      "y": 46.5
+    }
+  },
+  {
+    "id": "h_21",
+    "name": "Đại chùy",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Giữa đốt sống cổ 7 ngực 1",
+    "indication": "Sốt cao, cảm cúm, cảm mạo, đau đầu",
+    "special_note": "Hội của 6 kinh Dương. Huyệt vàng hạ sốt cao, thanh nhiệt toàn thân.",
+    "mnemonic": "Cổ bảy ngực một Đại Chùy nhô / Cắt cơn sốt vã, cảm cúm lui nhanh.",
+    "memory_trick": "Cúi đầu xuống, đốt gai sống nào lồi cao nhất sau cổ là C7, dưới C7 (khe C7-D1) là Đại Chùy! Sốt cao cỡ nào châm cứu hoặc giác hơi cũng hạ.",
+    "tags": [
+      "sốt cao",
+      "cảm cúm",
+      "cảm mạo",
+      "đau đầu"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 50,
+      "y": 17.5
+    }
+  },
+  {
+    "id": "h_22",
+    "name": "Kiên ngung",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Chỗ lõm giữa xương mỏm cùng vai",
+    "indication": "Đau khớp vai, đau đám rối TK cánh tay (gồm các dây TK đi từ cổ 2 đến cổ 7, TK quay, trụ, giữa mũ), liệt chi trên, liệt TK mũ.",
+    "special_note": "Bảo bệnh nhân dang ngang cánh tay, trên mỏm vai xuất hiện 2 chỗ lõm, huyệt ở chỗ lõm phía trước.",
+    "mnemonic": "Chỗ lõm mỏm cùng xương khớp vai / Kiên Ngung giơ cánh tay liền hết đau.",
+    "memory_trick": "Kiên = vai, Ngung = góc vai. Giơ tay ngang thấy hõm vai. Trị trọn vẹn bệnh vai - liệt tay - đám rối thần kinh cánh tay.",
+    "tags": [
+      "đau khớp vai",
+      "đau đám rối TK cánh tay",
+      "liệt chi trên",
+      "liệt TK mũ"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 37,
+      "y": 18
+    }
+  },
+  {
+    "id": "h_23",
+    "name": "Kiên tỉnh",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Điểm giữa Đại chùy và Kiên ngung",
+    "indication": "Đau vai gáy, đau lưng, viêm tuyến vú",
+    "special_note": "Tỉnh = cái giếng. Không châm thẳng quá sâu tránh xuyên đỉnh phổi. Cấm châm phụ nữ mang thai.",
+    "mnemonic": "Nối Đại Chùy với Kiên Ngung xem / Chính giữa giếng vai Kiên Tỉnh êm gáy.",
+    "memory_trick": "Công thức toán học: Kiên Tỉnh = (Đại Chùy + Kiên Ngung) / 2! Nằm chính giữa cơ thang trên bờ vai. Trị mỏi vai gáy, tắc tia sữa.",
+    "tags": [
+      "đau vai gáy",
+      "đau lưng",
+      "viêm tuyến vú"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 43,
+      "y": 17.5
+    }
+  },
+  {
+    "id": "h_24",
+    "name": "Thiên tông",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Chính giữa xương bả vai",
+    "indication": "Đau vai gáy, đau lưng, đau dây TK liên sườn",
+    "special_note": "Nằm ngay hố dưới gai xương bả vai. Ấn vào thấy tức lan tỏa khắp vùng vai.",
+    "mnemonic": "Chính giữa xương bả Thiên Tông ngự / Vai gáy lưng buốt, liên sườn thông reo.",
+    "memory_trick": "Thiên Tông ngự trị tâm điểm xương bả vai! Trị đau mỏi lưng trên, vai gáy và thần kinh liên sườn.",
+    "tags": [
+      "đau vai gáy",
+      "đau lưng",
+      "đau TK liên sườn"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 42,
+      "y": 23
+    }
+  },
+  {
+    "id": "h_25",
+    "name": "Phế du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Liên đốt D3-D4 đo ngang ra 1,5 thốn",
+    "indication": "Ho hen, khó thở, chắp lẹo (chích nặn máu).",
+    "special_note": "LƯU Ý ĐẶC BIỆT: Chắp lẹo thì chích nặn máu tại Phế du khỏi cực nhanh!",
+    "mnemonic": "D3 D4 đo ngang tấc rưỡi / Phế Du hen suyễn, lẹo mắt chích ngay.",
+    "memory_trick": "Phổi (Phế) ở trên đỉnh ngực -> Khe đốt sống D3-D4 đo ra 1.5 thốn. Ho hen khó thở + mẹo thi: chích nặn máu trị chắp lẹo!",
+    "tags": [
+      "ho hen",
+      "khó thở",
+      "chắp lẹo",
+      "chích nặn máu"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 23.5
+    }
+  },
+  {
+    "id": "h_26",
+    "name": "Tâm du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "D5-D6 đo ngang ra 1,5 thốn",
+    "indication": "Mất ngủ, di tinh, đái dầm",
+    "special_note": "Tâm tàng Thần, chủ huyết mạch. Châm cứu an thần, điều hòa tâm khí.",
+    "mnemonic": "D5 D6 Tâm Du tấc rưỡi / Mất ngủ, hồi hộp, đái dầm bình yên.",
+    "memory_trick": "Trái tim (Tâm) số 5 may mắn -> Khe đốt D5-D6 đo ra 1.5 thốn. Trị mất ngủ, lo âu, di tinh, đái dầm.",
+    "tags": [
+      "mất ngủ",
+      "di tinh",
+      "đái dầm"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 26
+    }
+  },
+  {
+    "id": "h_27",
+    "name": "Can du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "D9-D10 đo ngang ra 1,5 thốn",
+    "indication": "Cao huyết áp, đau mắt đỏ, đau dạ dày",
+    "special_note": "Can khai khiếu ra mắt, can khí phạm vị gây đau dạ dày.",
+    "mnemonic": "D9 D10 ngang tấc rưỡi / Can Du hạ áp, mắt đỏ dạ dày.",
+    "memory_trick": "Gan (Can) số 9 cửu đỉnh -> D9-D10 đo ra 1.5 thốn. Trị can hỏa bốc: cao huyết áp, mắt đỏ + can khắc tỳ vị gây đau dạ dày.",
+    "tags": [
+      "cao huyết áp",
+      "đau mắt đỏ",
+      "đau dạ dày"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 29.5
+    }
+  },
+  {
+    "id": "h_28",
+    "name": "Tỳ du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "D11-D12 đo ngang ra 1,5 thốn",
+    "indication": "Đầy bụng, đau thượng vị, rối loạn tiêu hóa, chậm tiêu",
+    "special_note": "Tỳ chủ vận hóa thủy cốc. Vận chuyển thức ăn dinh dưỡng nuôi cơ thể.",
+    "mnemonic": "D11 D12 Tỳ Du tới / Đầy bụng, khó tiêu, rối loạn dạ dày.",
+    "memory_trick": "Tỳ nằm áp chót ngực -> D11-D12 đo ra 1.5 thốn. Chuyên trị bộ tiêu hóa: đầy bụng, chậm tiêu, rối loạn tiêu hóa.",
+    "tags": [
+      "đầy bụng",
+      "đau thượng vị",
+      "rối loạn tiêu hóa",
+      "chậm tiêu"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 32.5
+    }
+  },
+  {
+    "id": "h_29",
+    "name": "Vị du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "D12-L1 đo ngang ra 1,5 thốn",
+    "indication": "Đau dạ dày, chậm tiêu, nôn, đày bụng.",
+    "special_note": "Cửa ngõ chuyển tiếp ngực sang thắt lưng (D12-L1).",
+    "mnemonic": "D12 L1 đo ngang tấc rưỡi / Vị Du dạ dày nôn mửa tiêu tan.",
+    "memory_trick": "Vị = Dạ dày, nằm ngay khớp nối ngực lưng D12-L1 đo ra 1.5 thốn. Cứ đau dạ dày, nôn trớ, đầy trướng là Vị Du.",
+    "tags": [
+      "đau dạ dày",
+      "chậm tiêu",
+      "nôn",
+      "đầy bụng"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 34.5
+    }
+  },
+  {
+    "id": "h_30",
+    "name": "Thận du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "L2-L3 đo ngang ra 1,5 thốn",
+    "indication": "Đau lưng, đau TK đùi, ù tai, di tinh",
+    "special_note": "Thắt lưng là phủ của Thận. Thận hư thì lưng đau gối mỏi ù tai.",
+    "mnemonic": "L2 L3 tấc rưỡi ngang / Thận Du mỏi gối, ù tai, lưng còng.",
+    "memory_trick": "Thận nằm ngang thắt lưng L2-L3 (ngang Mệnh Môn) đo ra 1.5 thốn. Trị đau thắt lưng, đau TK đùi, ù tai, di tinh.",
+    "tags": [
+      "đau lưng",
+      "đau TK đùi",
+      "ù tai",
+      "di tinh"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 38
+    }
+  },
+  {
+    "id": "h_31",
+    "name": "Đại trường du",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "L4-L5 đo ngang ra 1,5 thốn",
+    "indication": "Đau lưng, đau TK tọa, trĩ",
+    "special_note": "Ngang mào chậu đo vào là khe L4-L5. Huyệt chủ đạo chữa đau lưng cấp và đau thần kinh tọa.",
+    "mnemonic": "L4 L5 Đại Trường Du / Đau lưng thần kinh tọa, bệnh trĩ êm ru.",
+    "memory_trick": "Ruột già (Đại trường) ở thấp nhất -> L4-L5 đo ngang 1.5 thốn. Trị đau lưng, thần kinh tọa chạy dọc mông và trĩ.",
+    "tags": [
+      "đau lưng",
+      "đau TK tọa",
+      "trĩ"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 45,
+      "y": 42
+    }
+  },
+  {
+    "id": "h_32",
+    "name": "Mệnh môn",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Giữa liên đốt L2-L3",
+    "indication": "Đau lưng, di tinh, đái dầm, ỉa chảy mãn tính",
+    "special_note": "Nằm trên mạch Đốc, chính giữa đường cột sống ngang với Thận du. Ngọn lửa sinh mệnh bổ dương khí.",
+    "mnemonic": "Chính giữa khe đốt L2 L3 / Mệnh Môn dương khí, tiêu chảy di tinh.",
+    "memory_trick": "Cửa của Sinh mệnh! Nằm ở ĐƯỜNG GIỮA cột sống L2-L3 (ở giữa 2 huyệt Thận Du). Trị đau lưng, đái dầm, ỉa chảy mãn tính.",
+    "tags": [
+      "đau lưng",
+      "di tinh",
+      "đái dầm",
+      "ỉa chảy mãn tính"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 50,
+      "y": 38
+    }
+  },
+  {
+    "id": "h_33",
+    "name": "Trường cường",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "Đầu chóp xương cụt",
+    "indication": "ỉa chảy mãn tính, trĩ, đau lưng, sa trực tràng, đặc biệt điều trị Thượng mã phong",
+    "special_note": "ĐẶC BIỆT: Cấp cứu Thượng mã phong đầu bảng! Nằm ngay chóp xương cụt.",
+    "mnemonic": "Chóp cụt Trường Cường chớ có quên / Trĩ sa, thượng mã cứu liền mạng nguy!",
+    "memory_trick": "Trường = dài, Cường = mạnh mẽ. Ở ĐẦU CHÓP XƯƠNG CỤT. Nhớ mẹo sống còn: Cứu Thượng mã phong + sa trực tràng + trĩ.",
+    "tags": [
+      "ỉa chảy mãn tính",
+      "trĩ",
+      "đau lưng",
+      "sa trực tràng",
+      "thượng mã phong"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 50,
+      "y": 50
+    }
+  },
+  {
+    "id": "h_34",
+    "name": "Hoàn khiêu",
+    "region_id": "back",
+    "region_name": "Vai, Lưng, Mông",
+    "location": "BN nằm nghiêng, chân trên co, chân dưới duỗi, huyệt ở chỗ lõm sau mấu chuyển lớn xương đùi, trên cơ hông to.",
+    "indication": "Đau khớp háng, đau TK tọa (châm sâu 2-3cm)",
+    "special_note": "Tư thế bắt buộc: Nằm nghiêng, chân trên co, chân dưới duỗi! Châm sâu kim 2-3cm để đắc khí tới dây TK tọa.",
+    "mnemonic": "Nằm nghiêng co gối bấm Hoàn Khiêu / Chỗ lõm mấu chuyển tọa đau biến liền.",
+    "memory_trick": "Hoàn khiêu = gót chân co chạm vào mông! Chỗ lõm sau mấu chuyển xương đùi. Đệ nhất huyệt đau thần kinh tọa & khớp háng (châm sâu 2-3cm).",
+    "tags": [
+      "đau khớp háng",
+      "đau TK tọa"
+    ],
+    "body_part": "back",
+    "coords": {
+      "x": 42,
+      "y": 48
+    }
+  },
+  {
+    "id": "h_35",
+    "name": "Khúc trì",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Gấp khuỷu tay, huyệt ở tận cùng phía ngoài nếp gấp khuỷu tay",
+    "indication": "Đau TK quay, đau khớp khuỷu, liệt chi trên, cảm mạo, sốt.",
+    "special_note": "Hợp huyệt của kinh Đại trường. Hạ sốt, thanh nhiệt, điều hòa huyết áp rất mạnh.",
+    "mnemonic": "Gấp khuỷu nếp gấp ngoài Khúc Trì / Hạ sốt, đau khớp, liệt tay phục hồi.",
+    "memory_trick": "Khúc = gấp khúc, Trì = ao nước. Gấp cẳng tay 90 độ, huyệt ở đầu ngoài nếp gấp khuỷu. Trị đau khuỷu, TK quay, liệt tay, sốt cao.",
+    "tags": [
+      "đau TK quay",
+      "đau khớp khuỷu",
+      "liệt chi trên",
+      "cảm mạo",
+      "sốt"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 28,
+      "y": 30
+    }
+  },
+  {
+    "id": "h_36",
+    "name": "Nội quan",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Từ lằn chỉ cổ tay đo lên 2 thốn, giữa cơ gan tay lớn và cơ gan tay bé.",
+    "indication": "Đau khớp cổ tay, đau TK giữa, sốt, mất ngủ, hồi hộp.",
+    "special_note": "Huyệt Lạc của kinh Tâm bào, mở mạch Âm duy. Khắc tinh của nôn mửa say xe và đau thắt ngực hồi hộp.",
+    "mnemonic": "Lằn chỉ cổ tay lên hai thốn / Nội Quan tim đập, mất ngủ êm say.",
+    "memory_trick": "Nội = bên trong (mặt trong cẳng tay). Từ lằn cổ tay đo lên 2 thốn, giữa 2 sợi gân nổi rõ khi nắm chặt tay. Trị tim đập hồi hộp, mất ngủ, nôn mửa.",
+    "tags": [
+      "đau khớp cổ tay",
+      "đau TK giữa",
+      "sốt",
+      "mất ngủ",
+      "hồi hộp"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 25,
+      "y": 40
+    }
+  },
+  {
+    "id": "h_37",
+    "name": "Ngoại quan",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Khu cẳng tay ra sau, cũng từ lằn chỉ cổ tay đo lên 2 thốn, đối diện huyệt Nội quan",
+    "indication": "Đau khớp cổ tay, đau nửa đầu, liệt chi trên, cảm mạo.",
+    "special_note": "Huyệt Lạc kinh Tam tiêu, mở mạch Dương duy. Đối xứng 1-1 với Nội quan qua cẳng tay.",
+    "mnemonic": "Mặt sau cẳng tay hai thốn đo / Ngoại Quan đối diện Nội Quan rành rành.",
+    "memory_trick": "Ngoại = mặt ngoài (mu tay). Đối diện thẳng hàng với Nội quan (từ lằn cổ tay sau đo lên 2 thốn). Trị đau nửa đầu, cảm mạo, liệt tay.",
+    "tags": [
+      "đau khớp cổ tay",
+      "đau nửa đầu",
+      "liệt chi trên",
+      "cảm mạo"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 23,
+      "y": 40
+    }
+  },
+  {
+    "id": "h_38",
+    "name": "Thần môn",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Trên lằn chỉ cổ tay, nằm trong chỗ lõm giữa xương trụ và xương đậu",
+    "indication": "Mất ngủ, đau khớp cổ tay, hồi hộp.",
+    "special_note": "Nguyên huyệt của kinh Tâm. Cửa ngõ đưa thần khí về yên ổn.",
+    "mnemonic": "Chỗ lõm xương đậu lằn cổ tay / Thần Môn an giấc ngủ say giấc nồng.",
+    "memory_trick": "Cửa của Thần! Nằm ngay trên ngấn cổ tay phía ngón út (chỗ lõm gân cơ trụ trước và xương đậu). Đệ nhất huyệt an thần trị mất ngủ, hồi hộp.",
+    "tags": [
+      "mất ngủ",
+      "đau khớp cổ tay",
+      "hồi hộp"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 26,
+      "y": 43
+    }
+  },
+  {
+    "id": "h_39",
+    "name": "Hợp cốc",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Khép chặt ngón trỏ và ngón cái, huyệt ở chỗ lồi cao nhất",
+    "indication": "Đau đầu, đau răng, liệt dây TK VII ngoại biên, liệt chi trên, sốt cao cảm mạo.",
+    "special_note": "Đầu mặt tìm Hợp Cốc! Khắc tinh đau răng, méo miệng. CẤM CHÂM phụ nữ có thai (gây tăng co bóp tử cung).",
+    "mnemonic": "Khép chặt trỏ cái thịt nhô cao / Hợp Cốc đau đầu răng méo mặt tan.",
+    "memory_trick": "Khe 'Hổ khẩu': Khép ngón cái sát ngón trỏ, thịt gồ cao nhất chính là Hợp Cốc. Chữa bách bệnh vùng đầu mặt: đau răng, đau đầu, liệt VII, sốt cao.",
+    "tags": [
+      "đau đầu",
+      "đau răng",
+      "liệt TK VII",
+      "liệt chi trên",
+      "sốt cao cảm mạo"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 23,
+      "y": 46
+    }
+  },
+  {
+    "id": "h_40",
+    "name": "Thập tuyên",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Đỉnh chóp của 10 đầu ngón tay, cách bờ tự do 2mm",
+    "indication": "Cấp cứu choáng, ngất, hôn mê (chích nặn máu)",
+    "special_note": "ĐẶC TRỊ CẤP CỨU: Dùng kim tam lăng hoặc kim tiêm chích nặn máu từng ngón tay để hạ sốt cao co giật, tỉnh hôn mê.",
+    "mnemonic": "Mười đầu ngón tay Thập Tuyên danh / Nặn máu chích ngay người ngất tỉnh liền.",
+    "memory_trick": "Thập = 10 đầu ngón tay cách móng 2mm. Tuyệt chiêu chích nặn máu cấp cứu choáng, ngất, hôn mê, sốt cao co giật.",
+    "tags": [
+      "cấp cứu",
+      "choáng",
+      "ngất",
+      "hôn mê",
+      "chích nặn máu"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 21,
+      "y": 50
+    }
+  },
+  {
+    "id": "h_41",
+    "name": "Thái uyên",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Trên lằn chỉ cổ tay, huyệt ở bờ trong gân cơ duỗi ngón cái (châm tránh động mạch quay)",
+    "indication": "Ho hen, viêm phế quản",
+    "special_note": "LƯU Ý CẨN TRỌNG: Nằm ngay sát động mạch quay đập phập phồng, châm phải gạt động mạch sang một bên, tránh đâm vào mạch máu!",
+    "mnemonic": "Rãnh ngoài lằn cổ tay Thái Uyên / Tránh động mạch quay, ho hen tiêu tan.",
+    "memory_trick": "Thái Uyên = vực sâu lớn của kinh Phế. Ngay ngấn cổ tay phía ngón cái. Nhớ ngay lưu ý sinh tử: CHÂM TRÁNH ĐỘNG MẠCH QUAY! Trị ho hen, viêm phế quản.",
+    "tags": [
+      "ho hen",
+      "viêm phế quản",
+      "châm tránh ĐM quay"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 23.5,
+      "y": 43
+    }
+  },
+  {
+    "id": "h_42",
+    "name": "Xích trạch",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Trên lằn chỉ khuỷu tay, huyệt ở bờ ngoài gân cơ nhị đầu",
+    "indication": "Đau khớp khuỷu, ho, sốt",
+    "special_note": "Hợp huyệt của kinh Phế thuộc Thủy. Tả hỏa của Phế nhiệt cực nhanh.",
+    "mnemonic": "Bờ ngoài gân nhị đầu nếp gấp / Xích Trạch hạ sốt, ho hen khuỷu đau.",
+    "memory_trick": "Xích Trạch ở nếp gấp khuỷu nhưng nằm ở BỜ NGOÀI gân nhị đầu. Trị đau khớp khuỷu, ho do nhiệt, hạ sốt.",
+    "tags": [
+      "đau khớp khuỷu",
+      "ho",
+      "sốt"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 26,
+      "y": 30.5
+    }
+  },
+  {
+    "id": "h_43",
+    "name": "Khúc trạch",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Trên lằn chỉ khuỷu tay, huyệt ở rãnh nhị đầu trong",
+    "indication": "Đau khớp khuỷu, sốt cao, nôn",
+    "special_note": "Hợp huyệt kinh Tâm bào. Chuyên thanh tâm tả hỏa, cắt cơn nôn ói cấp tính.",
+    "mnemonic": "Rãnh nhị đầu trong nếp khuỷu tay / Khúc Trạch sốt cao, nôn ói dừng ngay.",
+    "memory_trick": "So sánh dễ nhớ: Xích Trạch ở bờ NGOÀI gân nhị đầu -> Khúc Trạch ở rãnh BÊN TRONG gân nhị đầu. Trị nôn mửa, sốt cao, đau khuỷu.",
+    "tags": [
+      "đau khớp khuỷu",
+      "sốt cao",
+      "nôn"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 29,
+      "y": 30.5
+    }
+  },
+  {
+    "id": "h_44",
+    "name": "Bát tà",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Tận cùng các nếp gấp của 5 ngón tay, phía ngoài có 4 huyệt",
+    "indication": "Viêm khớp bàn tay",
+    "special_note": "Bát = 8 huyệt trên 2 bàn tay (mỗi bên 4 kẽ ngón). Châm chếch hướng lên cổ tay.",
+    "mnemonic": "Kẽ năm ngón tay tám huyệt xinh / Bát Tà trừ thấp, bàn tay co duỗi.",
+    "memory_trick": "Bát = 8, Tà = tà khí ở 8 kẽ ngón tay. Nằm ở nếp gấp giữa các ngón tay. Chuyên trị viêm sưng khớp bàn ngón tay, tê bàn tay.",
+    "tags": [
+      "viêm khớp bàn tay"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 22,
+      "y": 48
+    }
+  },
+  {
+    "id": "h_45",
+    "name": "Thủ tam lý",
+    "region_id": "arm",
+    "region_name": "Chi Trên",
+    "location": "Dưới huyệt khúc trì 2 thốn về phía cẳng tay. Nằm trên đường nối giữa huyệt Khúc trì và Hợp cốc",
+    "indication": "Liệt chi trên, đau nhức cổ - vai- cánh tay, nôn mửa, nấc, say tàu xe.",
+    "special_note": "3 dặm ở tay (Thủ = tay). Tác dụng bổ khí kiện tỳ ở tay tương tự Túc tam lý ở chân.",
+    "mnemonic": "Khúc Trì đo xuống hai thốn ngay / Thủ Tam Lý nấc nôn, say tàu xe.",
+    "memory_trick": "Từ Khúc Trì đo thẳng xuống 2 thốn trên đường nối về Hợp Cốc. Chữa say tàu xe, nôn nấc, đau nhức mỏi cổ vai cánh tay.",
+    "tags": [
+      "liệt chi trên",
+      "đau nhức cổ vai cánh tay",
+      "nôn mửa",
+      "nấc",
+      "say tàu xe"
+    ],
+    "body_part": "arm",
+    "coords": {
+      "x": 26,
+      "y": 34
+    }
+  },
+  {
+    "id": "h_46",
+    "name": "Phong thị",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Bn nằm thẳng, tay duỗi thẳng đến mặt ngoài đùi, đầu ngón tay giữa chỉ đến đâu là huyệt",
+    "indication": "Liệt nửa người, liệt chi dưới, đau TK đùi, mẩn ngứa, kinh nguyệt không đều",
+    "special_note": "Tư thế lấy huyệt kinh điển: Đứng hoặc nằm xuôi thẳng tay, đầu ngón giữa chạm mặt ngoài đùi ở đâu thì đó là huyệt.",
+    "mnemonic": "Đứng thẳng xuôi tay ngón giữa trỏ / Phong Thị mặt đùi trừ ngứa liệt chân.",
+    "memory_trick": "Phong Thị = Chợ của gió (trừ phong). Xuôi thẳng ngón giữa chạm mặt ngoài đùi. Trị mẩn ngứa, mày đay, liệt chân, kinh nguyệt không đều.",
+    "tags": [
+      "liệt nửa người",
+      "liệt chi dưới",
+      "đau TK đùi",
+      "mẩn ngứa",
+      "kinh nguyệt không đều"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 39,
+      "y": 57
+    }
+  },
+  {
+    "id": "h_47",
+    "name": "Huyết hải",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Co đầu gối, từ bờ trên xương bánh chè đo lên trên 1 thốn, vào trong 2 thốn",
+    "indication": "Đau khớp gối, đau TK đùi, mẩn ngứa, kinh nguyệt không đều.",
+    "special_note": "Biển chứa Huyết. Chuyên trị các bệnh về máu (huyết hư, huyết nhiệt gây ngứa dị ứng, bế kinh).",
+    "mnemonic": "Bánh chè lên một vào trong hai / Huyết Hải biển máu điều kinh ngứa tan.",
+    "memory_trick": "Công thức vị trí: Bờ trên bánh chè -> LÊN 1 thốn -> VÀO TRONG 2 thốn. Trị bệnh huyết: kinh nguyệt không đều, mẩn ngứa dị ứng, đau gối.",
+    "tags": [
+      "đau khớp gối",
+      "đau TK đùi",
+      "mẩn ngứa",
+      "kinh nguyệt không đều"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 42.5,
+      "y": 64
+    }
+  },
+  {
+    "id": "h_48",
+    "name": "Lương khâu",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Gấp đầu gối, từ bờ trên xương bánh chè đo lên 2 thốn, ra ngoài 1 thốn",
+    "indication": "Đau khớp gối, đau TK đùi, đau dạ dày, viêm tuyến vú.",
+    "special_note": "Khích huyệt của kinh Vị. Cắt cơn đau dạ dày cấp tính cực kỳ công hiệu.",
+    "mnemonic": "Bánh chè lên hai ra ngoài một / Lương Khâu cắt cơn đau dạ dày gối đau.",
+    "memory_trick": "So sánh với Huyết Hải: Huyết Hải lên 1 vào trong 2 -> Lương Khâu LÊN 2 RA NGOÀI 1! Khích huyệt trị đau quặn dạ dày cấp, viêm vú, đau gối.",
+    "tags": [
+      "đau khớp gối",
+      "đau TK đùi",
+      "đau dạ dày",
+      "viêm tuyến vú"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 38,
+      "y": 63
+    }
+  },
+  {
+    "id": "h_49",
+    "name": "Ủy trung",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Giữa nếp gấp lằn trám kheo chân",
+    "indication": "Đau từ thắt lưng trở xuống, đau TK tọa.",
+    "special_note": "Châm ngôn ngàn đời: 'Yêu bối Ủy trung cầu' (Đau thắt lưng lưng tìm huyệt Ủy trung). Có thể chích nặn máu khi đau lưng cấp tính.",
+    "mnemonic": "Chính giữa trám khoeo gập gối xem / Ủy Trung lưng buốt, tọa đau êm liền.",
+    "memory_trick": "Chính giữa khoeo chân sau đầu gối. Vua trị đau lưng: đau từ thắt lưng xuống chân, đau thần kinh tọa tê mông đùi.",
+    "tags": [
+      "đau thắt lưng trở xuống",
+      "đau TK tọa"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 40,
+      "y": 68
+    }
+  },
+  {
+    "id": "h_50",
+    "name": "Độc tỵ",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Chỗ lõm đầu dưới trước ngoài xương bánh chè",
+    "indication": "Đau khớp gối",
+    "special_note": "Hình dáng như mũi con bê/trâu (Độc = bê, Tỵ = mũi). Đệ nhất huyệt thoái hóa khớp gối.",
+    "mnemonic": "Hõm dưới ngoài xương bánh chè / Độc Tỵ gối mỏi bước đi nhẹ nhàng.",
+    "memory_trick": "Mắt đầu gối phía NGOÀI! Chỗ lõm dưới bờ ngoài xương bánh chè. Đau khớp gối, viêm thoái hóa khớp gối châm xuyên qua gối.",
+    "tags": [
+      "đau khớp gối"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 39.5,
+      "y": 67.5
+    }
+  },
+  {
+    "id": "h_51",
+    "name": "Túc tam lý",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Từ huyệt Độc tỵ đo xuống 3 thốn, huyệt ở ngoài mào chày 1 khoát ngón tay trỏ",
+    "indication": "Đau khớp gối, đau TK tọa, kích thích tiêu hóa cảm mạo, liệt chi dưới, đau đầu, đau vai gáy.",
+    "special_note": "Huyệt TRƯỜNG THỌ số 1 cơ thể! Cổ nhân nói: Bấm Túc tam lý ngày ngày đi ngàn dặm không mỏi, kiện tỳ vị tăng thọ trăm tuổi.",
+    "mnemonic": "Độc Tỵ đo xuống ba thốn ngay / Ngoài mào một khoát, dạ dày sống lâu.",
+    "memory_trick": "Từ Độc Tỵ đo xuống 3 thốn (4 ngón tay), cách mép ngoài mào chày 1 khoát ngón tay. Huyệt toàn năng: tiêu hóa, thần kinh tọa, khớp gối, bổ khí huyết.",
+    "tags": [
+      "đau khớp gối",
+      "đau TK tọa",
+      "kích thích tiêu hóa",
+      "cảm mạo",
+      "liệt chi dưới",
+      "đau đầu",
+      "đau vai gáy"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 38.5,
+      "y": 73
+    }
+  },
+  {
+    "id": "h_52",
+    "name": "Dương lăng tuyền",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Chỗ lõm giữa xương mác và xương chày, huyệt ở bên ngoài huyệt Túc tam lý 1 thốn",
+    "indication": "Đau khớp gối, đau TK tọa, đau vai gáy, đau nửa đầu, liệt chi dưới.",
+    "special_note": "Huyệt Hội của CÂN (gân cơ). Toàn bộ chứng co rút gân, viêm đau gân cơ đều quy về đây.",
+    "mnemonic": "Lõm đầu xương mác bờ ngoài cẳng / Dương Lăng gân khớp gối hông thông suốt.",
+    "memory_trick": "Nằm ở chỗ lõm phía dưới trước chỏm xương mác (ở ngoài Túc Tam Lý 1 thốn). Huyệt chủ về gân cơ: trị đau thần kinh tọa, đau gối, đau nửa đầu.",
+    "tags": [
+      "đau khớp gối",
+      "đau TK tọa",
+      "đau vai gáy",
+      "đau nửa đầu",
+      "liệt chi dưới"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 36.5,
+      "y": 71
+    }
+  },
+  {
+    "id": "h_53",
+    "name": "Thừa sơn",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Giữa bắp chân, nơi hợp lại của 2 cơ sinh đôi",
+    "indication": "Đau TK tọa, chuột rút",
+    "special_note": "Hình chữ V giữa bắp chân khi kiễng gót. Trị chuột rút bắp chuối trong tích tắc.",
+    "mnemonic": "Chỗ hợp hai cơ bắp chân sau / Thừa Sơn hết vọp bẻ, đau tọa thần kinh.",
+    "memory_trick": "Thừa = gánh vác, Sơn = ngọn núi bắp chuối. Điểm hội tụ chữ V ở đuôi 2 cơ bắp chân. Đang bơi lội bị chuột rút (vọp bẻ) hay đau tọa là bấm Thừa Sơn.",
+    "tags": [
+      "đau TK tọa",
+      "chuột rút"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 40,
+      "y": 78
+    }
+  },
+  {
+    "id": "h_54",
+    "name": "Huyền chung",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Từ lồi mắt cá ngoài đo lên 3 thốn, trên đường nối từ Dương lăng tuyền đến mắt cá ngoài",
+    "indication": "Liệt nửa người, đau vai gáy, đau mạn sườn",
+    "special_note": "Còn gọi là Tuyệt Cốt. Huyệt Hội của TỦY trong Bát hội huyệt. Tủy sinh huyết, dưỡng cốt.",
+    "mnemonic": "Mắt cá ngoài đo lên ba thốn / Huyền Chung tủy dưỡng, vai gáy lưng reo.",
+    "memory_trick": "Từ đỉnh mắt cá NGOÀI đo lên 3 thốn sát bờ sau xương mác. Huyệt hội của Tủy: trị vẹo cổ cứng gáy, liệt nửa người, đau sườn.",
+    "tags": [
+      "liệt nửa người",
+      "đau vai gáy",
+      "đau mạn sườn"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 37.5,
+      "y": 86
+    }
+  },
+  {
+    "id": "h_55",
+    "name": "Tam âm giao",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Từ lồi mắt cá trong đo lên 3 thốn sát sau xương chày",
+    "indication": "Mất ngủ, bí đái, đái dầm, nhức đầu, rong kinh",
+    "special_note": "Hội ngộ 3 kinh Âm (Tỳ, Can, Thận). Đệ nhất huyệt phụ khoa và an thần. CẤM CHÂM phụ nữ có thai (gây sảy thai, sinh non).",
+    "mnemonic": "Mắt cá trong lên ba thốn sâu / Tam Âm Giao phụ khoa, ngủ say giấc nồng.",
+    "memory_trick": "Giao nhau 3 kinh âm: Tỳ - Can - Thận! Từ mắt cá TRONG đo lên 3 thốn (4 ngón tay) sát bờ sau xương chày. Trị mất ngủ, bí đái, rong kinh.",
+    "tags": [
+      "mất ngủ",
+      "bí đái",
+      "đái dầm",
+      "nhức đầu",
+      "rong kinh"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 42.5,
+      "y": 86
+    }
+  },
+  {
+    "id": "h_56",
+    "name": "Côn lôn",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Chỗ lõm sau ngang lồi mắt cá ngoài nửa thốn",
+    "indication": "Cao huyết áp, đau đầu, đau lưng, đau TK tọa, đau khớp cổ chân",
+    "special_note": "Kinh huyệt của kinh Bàng quang. Thanh nhiệt hạ áp, dẫn khí hỏa đi xuống.",
+    "mnemonic": "Sau mắt cá ngoài nửa thốn thôi / Côn Lôn hạ áp, lưng chân đau nhòa.",
+    "memory_trick": "Ngọn núi Côn Lôn sừng sững! Nằm ở chỗ lõm giữa mắt cá NGOÀI và gân gót (sau mắt cá 0.5 thốn). Trị huyết áp cao, đau đầu, đau lưng, khớp cổ chân.",
+    "tags": [
+      "cao huyết áp",
+      "đau đầu",
+      "đau lưng",
+      "đau TK tọa",
+      "đau khớp cổ chân"
+    ],
+    "body_part": "leg",
+    "coords": {
+      "x": 36.5,
+      "y": 91
+    }
+  },
+  {
+    "id": "h_57",
+    "name": "Thái xung",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Kẽ ngón 1-2 đo lên 2 thốn về phía mu chân",
+    "indication": "Cao huyết áp, kinh nguyệt không đều, đau đầu.",
+    "special_note": "Nguyên huyệt của kinh Can. Nơi dẹp tan cơn giận, hạ huyết áp khẩn cấp tốt nhất cơ thể.",
+    "mnemonic": "Kẽ ngón một hai lên hai thốn / Thái Xung bình can, hạ áp dịu đầu.",
+    "memory_trick": "Từ kẽ ngón chân cái và ngón 2 đo ngược lên mu chân 2 thốn ở rãnh lõm xương. Huyệt bình can giáng hỏa: hạ huyết áp tức thì, hết đau đầu cau có.",
+    "tags": [
+      "cao huyết áp",
+      "kinh nguyệt không đều",
+      "đau đầu"
+    ],
+    "body_part": "foot",
+    "coords": {
+      "x": 39,
+      "y": 95
+    }
+  },
+  {
+    "id": "h_58",
+    "name": "Nội đình",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Kẽ ngón 2-3 đo lên 0,5 thốn về phía mu chân",
+    "indication": "Đau răng, đầy bụng, nôn mửa, ăn kém, đại tiện phân nát.",
+    "special_note": "Huỳnh huyệt của kinh Vị (dạ dày). Tả nhiệt hỏa dạ dày làm giảm sưng đau chân răng rất nhạy.",
+    "mnemonic": "Kẽ ngón hai ba nửa thốn đo / Nội Đình răng buốt, đầy hơi bụng lình sình.",
+    "memory_trick": "Kẽ ngón chân 2 và 3 đo lên mu chân nửa thốn. Huỳnh hỏa kinh Vị: trị đau nhức răng (do vị nhiệt), nôn mửa, đầy bụng, đi ngoài phân nát.",
+    "tags": [
+      "đau răng",
+      "đầy bụng",
+      "nôn mửa",
+      "ăn kém",
+      "đại tiện phân nát"
+    ],
+    "body_part": "foot",
+    "coords": {
+      "x": 37.5,
+      "y": 96
+    }
+  },
+  {
+    "id": "h_59",
+    "name": "Bát phong",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Huyệt ở các kẽ ngón chân của 2 bàn chân",
+    "indication": "Đau khớp ngón chân",
+    "special_note": "8 ngọn gió (Bát phong): 8 huyệt ở các kẽ ngón của 2 bàn chân (tương ứng Bát tà ở tay).",
+    "mnemonic": "Kẽ mười ngón chân tám huyệt hay / Bát Phong thông lạc ngón chân buốt đau.",
+    "memory_trick": "Bát tà ở bàn tay -> Bát phong ở bàn chân! Gồm 8 điểm ở các kẽ ngón chân trên 2 bàn chân. Chuyên trị đau buốt, sưng khớp ngón chân.",
+    "tags": [
+      "đau khớp ngón chân"
+    ],
+    "body_part": "foot",
+    "coords": {
+      "x": 38,
+      "y": 98
+    }
+  },
+  {
+    "id": "h_60",
+    "name": "Dũng tuyền",
+    "region_id": "leg",
+    "region_name": "Chi Dưới",
+    "location": "Chỗ lõm giữa 1/3 trước và 2/3 sau gan bàn chân (khi co ngón chân lại)",
+    "indication": "Cấp cứu ngất, hạ sốt cao, mất ngủ, tăng huyết áp, nhức đầu.",
+    "special_note": "[Kinh điển hoàn thiện 60 huyệt] Tỉnh huyệt của kinh Thận dưới lòng bàn chân. Trị hạ sốt, hạ huyết áp, an thần định trí.",
+    "mnemonic": "Gan bàn chân lõm chỗ Dũng Tuyền / Hạ sốt, cấp cứu, giấc yên an thần.",
+    "memory_trick": "Dũng = vọt ra, Tuyền = con suối (con suối sinh khí vọt ra từ đất). Co các ngón chân lại, chỗ hõm sâu 1/3 trước lòng bàn chân là Dũng Tuyền.",
+    "tags": [
+      "cấp cứu ngất",
+      "hạ sốt cao",
+      "mất ngủ",
+      "tăng huyết áp",
+      "nhức đầu"
+    ],
+    "body_part": "sole",
+    "coords": {
+      "x": 42,
+      "y": 96
+    }
+  }
+];
