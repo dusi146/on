@@ -80,7 +80,7 @@
     isCardFlipped: false,
     
     // Sub-games state
-    activeSubgame: 'quiz', // 'quiz' | 'match' | 'boss'
+    activeSubgame: 'quiz', // 'quiz' | 'match' | 'boss' | 'reflex'
     
     // Quiz State
     quiz: {
@@ -105,6 +105,15 @@
       currentBossIdx: 0,
       bossHp: 100,
       playerHp: 100
+    },
+
+    // Reflex State
+    reflex: {
+      currentIndex: 0,
+      timer: null,
+      timeLeft: 8,
+      isAnswered: false,
+      score: 0
     },
 
     // Case State
@@ -221,6 +230,17 @@
     el.popoverInd = document.getElementById('popover-ind');
     el.btnPopoverDetail = document.getElementById('btn-popover-detail');
     el.btnPopoverClose = document.getElementById('btn-popover-close');
+
+    // Carousel search
+    el.carouselSearch = document.getElementById('carousel-search');
+
+    // Subgame 4: Reflex Elements
+    el.subgameReflex = document.getElementById('subgame-reflex');
+    el.reflexTimer = document.getElementById('reflex-timer');
+    el.reflexSituation = document.getElementById('reflex-situation');
+    el.reflexOptionsGrid = document.getElementById('reflex-options-grid');
+    el.reflexFeedback = document.getElementById('reflex-feedback');
+    el.btnNextReflex = document.getElementById('btn-next-reflex');
 
     // Atlas
     el.searchInput = document.getElementById('search-input');
@@ -601,6 +621,158 @@
     }
   }
 
+  // --- SUBGAME 4: PHẢN XẠ CẤP CỨU & TRỌNG ĐIỂM THI ---
+  const REFLEX_SCENARIOS = [
+    {
+      situation: "Bệnh nhân ngất xỉu đột ngột, sắc mặt trắng bợch, bất tỉnh nhân sự! Cần bấm ngay huyệt nào?",
+      correct: "Nhân trung",
+      options: ["Nhân trung", "Hợp cốc", "Dũng tuyền", "Đại chùy"],
+      explain: "Nhân trung (GV-26): Huyệt vàng khai khiếu tỉnh thần, cấp cứu ngất xỉu, tụt huyết áp số một của YHCT."
+    },
+    {
+      situation: "Phụ nữ có thai 2 tháng bị đau nhức đầu và vai gáy. Huyệt nào sau đây TUYỆT ĐỐI CẤM CHÂM vì gây trụy thai?",
+      correct: "Hợp cốc",
+      options: ["Hợp cốc", "Ấn đường", "Phong trì", "Thái dương"],
+      explain: "Hợp cốc (LI-4) & Tam âm giao (SP-6): Cực kỳ hoạt huyết, hành khí mạnh, kích thích co bóp tử cung gây trụy thai, cấm tuyệt đối ở phụ nữ có thai!"
+    },
+    {
+      situation: "Bệnh nhân sốt cao 39.5°C, có dấu hiệu mê sảng, co giật kinh phong. Huyệt nào giúp hạ sốt thanh nhiệt nhanh nhất?",
+      correct: "Đại chùy",
+      options: ["Đại chùy", "Trung quản", "Thận du", "Khúc cốt"],
+      explain: "Đại chùy (GV-14): Hội của Đốc mạch và 6 kinh dương, huyệt vàng thanh nhiệt, hạ sốt cao, giải biểu trừ tà."
+    },
+    {
+      situation: "Bệnh nhân trĩ sa lâu năm, sa trực tràng (khí hư hạ hãm). Huyệt nào trên đỉnh đầu thăng đề khí trị sa?",
+      correct: "Bách hội",
+      options: ["Bách hội", "Toản trúc", "Địa thương", "Giáp xa"],
+      explain: "Bách hội (GV-20): Hội của trăm mạch, thăng dương ích khí, trị chứng hạ hãm như sa trực tràng, sa dạ con, trĩ."
+    },
+    {
+      situation: "Châm huyệt Thái uyên (LU-9) ở nếp gấp cổ tay, thao tác kim cần tuyệt đối tránh tổn thương cấu trúc nào?",
+      correct: "Động mạch quay",
+      options: ["Động mạch quay", "Tĩnh mạch cảnh", "Xương thuyền", "Dây thần kinh hông"],
+      explain: "Thái uyên nằm ngay rãnh mạch quay (nơi bắt mạch thốn khẩu), khi châm phải gạt động mạch quay sang một bên để tránh đâm thủng động mạch."
+    },
+    {
+      situation: "Huyệt nằm chính giữa rốn, theo quy chế châm cứu TUYỆT ĐỐI CẤM CHÂM (chỉ cứu ấm hoặc đắp thuốc)?",
+      correct: "Thần khuyết",
+      options: ["Thần khuyết", "Khí hải", "Quan nguyên", "Trung quản"],
+      explain: "Thần khuyết (CV-8): Rốn là sẹo mỏng, mạch máu nông, châm kim dễ gây nhiễm trùng phúc mạc. Tuyệt đối cấm châm, chỉ cứu."
+    },
+    {
+      situation: "Bệnh nhân đau răng dữ dội ở hàm dưới, nhai khó khăn. Cặp huyệt kết hợp đắc dụng nhất là gì?",
+      correct: "Giáp xa + Hợp cốc",
+      options: ["Giáp xa + Hợp cốc", "Phong trì + Thiên tông", "Ủy trung + Thừa sơn", "Thái xung + Huyết hải"],
+      explain: "Giáp xa (ST-6) tại chỗ góc hàm + Hợp cốc (LI-4) toàn thân ('Diện khẩu Hợp cốc thu' - bệnh vùng mặt miệng tìm Hợp cốc)."
+    },
+    {
+      situation: "Đau dây thần kinh tọa dọc mặt sau đùi lan xuống bắp chân. Huyệt nào ở chính giữa nếp gấp khoeo chân là bắt buộc?",
+      correct: "Ủy trung",
+      options: ["Ủy trung", "Độc tỵ", "Lương khâu", "Túc tam lý"],
+      explain: "Ủy trung (BL-40): 'Yêu bối Ủy trung cầu' - bệnh vùng lưng và thắt lưng hông bắt buộc chọn huyệt Ủy trung."
+    },
+    {
+      situation: "Bệnh nhân mất ngủ kéo dài, hay hồi hộp lo âu, tim đập nhanh. Cần châm bổ huyệt nguyên của kinh Tâm nào?",
+      correct: "Thần môn",
+      options: ["Thần môn", "Khúc trì", "Thủ tam lý", "Xích trạch"],
+      explain: "Thần môn (HT-7): Nguyên huyệt của kinh Tâm, an thần định chí, dưỡng tâm bổ huyết, trị mất ngủ, hồi hộp số một."
+    },
+    {
+      situation: "Hen phế quản cấp, khó thở dữ dội, ho tức ngực. Cần châm huyệt nào ngay tại chỗ lõm bờ trên xương ức?",
+      correct: "Thiên đột",
+      options: ["Thiên đột", "Trung cực", "Khúc cốt", "Liêm tuyền"],
+      explain: "Thiên đột (CV-22): Huyệt cửa ngõ khí quản, khoan hung giáng khí, cắt cơn hen suyễn và khó thở cấp tính."
+    }
+  ];
+
+  function initReflexGame() {
+    state.reflex.currentIndex = 0;
+    renderReflexScenario();
+  }
+
+  function renderReflexScenario() {
+    if (!el.reflexSituation || !el.reflexOptionsGrid) return;
+    clearInterval(state.reflex.timer);
+
+    const scenario = REFLEX_SCENARIOS[state.reflex.currentIndex % REFLEX_SCENARIOS.length];
+    state.reflex.isAnswered = false;
+    state.reflex.timeLeft = 8;
+
+    el.reflexSituation.textContent = scenario.situation;
+    if (el.reflexTimer) el.reflexTimer.textContent = `⏳ ${state.reflex.timeLeft}s`;
+    if (el.reflexFeedback) el.reflexFeedback.style.display = 'none';
+    if (el.btnNextReflex) el.btnNextReflex.style.display = 'none';
+
+    // Start 8-second countdown
+    state.reflex.timer = setInterval(() => {
+      state.reflex.timeLeft--;
+      if (el.reflexTimer) el.reflexTimer.textContent = `⏳ ${state.reflex.timeLeft}s`;
+      if (state.reflex.timeLeft <= 0) {
+        clearInterval(state.reflex.timer);
+        handleReflexAnswer(null, scenario);
+      }
+    }, 1000);
+
+    // Render options
+    el.reflexOptionsGrid.innerHTML = '';
+    const shuffledOpts = [...scenario.options].sort(() => 0.5 - Math.random());
+    shuffledOpts.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'reflex-opt-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        if (state.reflex.isAnswered) return;
+        handleReflexAnswer(opt, scenario);
+      });
+      el.reflexOptionsGrid.appendChild(btn);
+    });
+  }
+
+  function handleReflexAnswer(chosenOpt, scenario) {
+    state.reflex.isAnswered = true;
+    clearInterval(state.reflex.timer);
+
+    const isCorrect = (chosenOpt === scenario.correct);
+    const buttons = el.reflexOptionsGrid.querySelectorAll('.reflex-opt-btn');
+
+    buttons.forEach(b => {
+      if (b.textContent === scenario.correct) {
+        b.classList.add('correct');
+      } else if (b.textContent === chosenOpt && !isCorrect) {
+        b.classList.add('wrong');
+      }
+    });
+
+    if (isCorrect) {
+      sound.correct();
+      state.stats.score += 20;
+      localStorage.setItem('acu_stats', JSON.stringify(state.stats));
+      renderStats();
+      if (el.reflexFeedback) {
+        el.reflexFeedback.style.display = 'block';
+        el.reflexFeedback.style.background = 'rgba(16, 185, 129, 0.15)';
+        el.reflexFeedback.style.color = 'var(--emerald-light)';
+        el.reflexFeedback.innerHTML = `<strong>Chính xác! (+20 XP)</strong><br>${scenario.explain}`;
+      }
+    } else {
+      sound.wrong();
+      if (el.reflexFeedback) {
+        el.reflexFeedback.style.display = 'block';
+        el.reflexFeedback.style.background = 'rgba(244, 63, 94, 0.15)';
+        el.reflexFeedback.style.color = '#fda4af';
+        el.reflexFeedback.innerHTML = `<strong>Chưa chính xác hoặc hết giờ!</strong><br>${scenario.explain}`;
+      }
+    }
+
+    if (el.btnNextReflex) {
+      el.btnNextReflex.style.display = 'block';
+      el.btnNextReflex.onclick = () => {
+        state.reflex.currentIndex++;
+        renderReflexScenario();
+      };
+    }
+  }
+
   // --- 3. CA LÂM SÀNG LOGIC ---
   function renderCase() {
     const currentCase = state.cases[state.caseState.currentIndex];
@@ -681,16 +853,39 @@
   }
 
   // --- 4. 3D & 2D MAP CONTROLS ---
-  function initQuickCarousel() {
+  function initQuickCarousel(filterQuery) {
+    if (!el.quickPointsCarousel) return;
     el.quickPointsCarousel.innerHTML = '';
-    state.allPoints.forEach((p, idx) => {
+
+    const query = (filterQuery !== undefined ? filterQuery : (el.carouselSearch ? el.carouselSearch.value : '')).trim().toLowerCase();
+    const pointsToRender = query
+      ? state.allPoints.filter(p =>
+          p.name.toLowerCase().includes(query) ||
+          (p.who_code && p.who_code.toLowerCase().includes(query)) ||
+          p.indication.toLowerCase().includes(query) ||
+          p.location.toLowerCase().includes(query)
+        )
+      : state.allPoints;
+
+    if (pointsToRender.length === 0) {
+      el.quickPointsCarousel.innerHTML = '<div style="font-size:12px;color:var(--text-dim);padding:8px 12px;">Không tìm thấy huyệt phù hợp...</div>';
+      return;
+    }
+
+    pointsToRender.forEach((p, idx) => {
       const badge = document.createElement('div');
       badge.className = 'quick-point-badge';
-      badge.textContent = `${idx + 1}. ${p.name}`;
+      const isBack = (p.pos_3d && p.pos_3d[2] < -0.015) || p.region_id === 'back';
+      const sideLabel = isBack ? 'Sau' : 'Trước';
+      const whoTag = p.who_code ? `<span style="color:var(--emerald-light);font-size:10px;font-weight:700;">[${p.who_code}]</span> ` : '';
+
+      badge.innerHTML = `${whoTag}<strong>${p.name}</strong> <span style="font-size:9.5px;color:var(--text-dim);">(${sideLabel})</span>`;
+      
       badge.addEventListener('click', () => {
         sound.tap();
         document.querySelectorAll('.quick-point-badge').forEach(b => b.classList.remove('active'));
         badge.classList.add('active');
+        badge.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
         if (state.mapMode === '3d' && window.Acu3D) {
           window.Acu3D.selectPoint(p.who_code || p.id);
@@ -907,9 +1102,11 @@
         } else if (targetView === 'cases') {
           renderCase();
         } else if (targetView === 'map') {
-          setTimeout(() => {
-            if (window.Acu3D) window.Acu3D.resize();
-          }, 100);
+          if (window.Acu3D) {
+            window.Acu3D.resize();
+            setTimeout(() => { if (window.Acu3D) window.Acu3D.resize(); }, 60);
+            setTimeout(() => { if (window.Acu3D) window.Acu3D.resize(); }, 220);
+          }
         }
       });
     });
@@ -928,6 +1125,7 @@
         if (gameKey === 'quiz' && !state.quiz.isActive) startQuiz();
         else if (gameKey === 'match') initMatchGame();
         else if (gameKey === 'boss') initBossBattle();
+        else if (gameKey === 'reflex') initReflexGame();
       });
     });
 
@@ -1031,9 +1229,28 @@
         el.camPresets.forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
         const presetKey = chip.dataset.preset;
-        if (window.Acu3D) window.Acu3D.focusRegion(presetKey);
+        if (window.Acu3D) {
+          window.Acu3D.focusRegion(presetKey);
+          if (presetKey === 'all') {
+            window.Acu3D.filterByRegion('all');
+            initQuickCarousel('');
+          } else {
+            const regMap = { head: 'head', chest: 'chest_abdomen', back: 'back', arm: 'arm', leg: 'leg' };
+            const regId = regMap[presetKey] || 'all';
+            window.Acu3D.filterByRegion(regId);
+            const searchKeyword = presetKey === 'head' ? 'đầu' : presetKey === 'chest' ? 'ngực' : presetKey === 'back' ? 'lưng' : presetKey === 'arm' ? 'tay' : 'chân';
+            initQuickCarousel(searchKeyword);
+          }
+        }
       });
     });
+
+    // 3D Carousel Search Input
+    if (el.carouselSearch) {
+      el.carouselSearch.addEventListener('input', (e) => {
+        initQuickCarousel(e.target.value);
+      });
+    }
 
     // 3D Secondary Tools
     el.btnToggleCore.addEventListener('click', () => {

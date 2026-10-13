@@ -138,11 +138,12 @@
 
       <!-- 2. VIEW: ĐẤU TRƯỜNG & MINI-GAMES -->
       <section id="view-quiz" class="view-section">
-        <!-- 3 Game Sub-Tabs -->
+        <!-- 4 Game Sub-Tabs -->
         <div class="subgame-nav">
           <button class="subgame-tab active" data-subgame="quiz">⚡ Trắc Nghiệm (12s)</button>
-          <button class="subgame-tab" data-subgame="match">🧩 Ghép Đôi Lục Bát</button>
-          <button class="subgame-tab" data-subgame="boss">⚔️ Đấu Boss Bệnh</button>
+          <button class="subgame-tab" data-subgame="match">🧩 Ghép Lục Bát</button>
+          <button class="subgame-tab" data-subgame="boss">⚔️ Đấu Boss</button>
+          <button class="subgame-tab" data-subgame="reflex">🚨 Cấp Cứu YHCT</button>
         </div>
 
         <!-- Subgame 1: Speed Quiz -->
@@ -206,6 +207,22 @@
             <div id="boss-battle-log" style="font-size:12px;color:#a7f3d0;background:rgba(16,185,129,0.1);padding:8px;border-radius:var(--radius-sm);display:none;"></div>
           </div>
         </div>
+
+        <!-- Subgame 4: Phản Xạ Cấp Cứu YHCT -->
+        <div id="subgame-reflex" class="game-subview">
+          <div class="reflex-arena">
+            <div class="reflex-header-row">
+              <span class="reflex-badge">🚨 PHẢN XẠ CẤP CỨU & TRỌNG ĐIỂM THI</span>
+              <span id="reflex-timer" class="reflex-timer">⏳ 8s</span>
+            </div>
+            <div id="reflex-scenario" class="reflex-scenario-card">
+              <div id="reflex-situation" class="reflex-situation">Bệnh nhân ngất xỉu đột ngột, bất tỉnh nhân sự! Cấp cứu huyệt nào ngay lập tức?</div>
+            </div>
+            <div class="reflex-options-grid" id="reflex-options-grid"></div>
+            <div id="reflex-feedback" class="reflex-feedback-box" style="display:none;"></div>
+            <button id="btn-next-reflex" class="primary-btn" style="display:none;margin-top:8px;">Tình Huống Tiếp Theo ➔</button>
+          </div>
+        </div>
       </section>
 
       <!-- 3. VIEW: CLINICAL CASES -->
@@ -233,9 +250,10 @@
               <button id="btn-mode-3d" class="mode-toggle-btn active">🌐 3D Người Thật</button>
               <button id="btn-mode-2d" class="mode-toggle-btn">🗺️ 2D Bản Đồ</button>
             </div>
+            <div class="status-pill-60">🟢 60/60 Huyệt</div>
             <div style="display:flex;gap:4px;">
-              <button id="btn-side-front" class="tool-btn-3d active" title="Xem mặt trước">Trước</button>
-              <button id="btn-side-back" class="tool-btn-3d" title="Xem mặt sau">Sau (180°)</button>
+              <button id="btn-side-front" class="tool-btn-3d active" title="Xem mặt trước">Trước (40)</button>
+              <button id="btn-side-back" class="tool-btn-3d" title="Xem mặt sau">Sau (20)</button>
             </div>
           </div>
 
@@ -263,6 +281,13 @@
         <div id="canvas3d-wrap" class="canvas3d-wrap">
           <div id="canvas3d-container" class="canvas3d-container"></div>
           <div class="canvas3d-hint">1 ngón xoay • 2 ngón thu phóng • Chạm huyệt</div>
+
+          <!-- Loading Indicator for 3D Anatomy Model -->
+          <div id="canvas3d-loading" class="canvas3d-loading">
+            <div class="canvas3d-spinner"></div>
+            <div id="canvas3d-loading-text" class="canvas3d-loading-text">Đang tải mô hình giải phẫu 3D...</div>
+            <div class="canvas3d-progress-bar"><div id="canvas3d-progress-fill" class="canvas3d-progress-fill"></div></div>
+          </div>
 
           <!-- Floating Zoom Buttons for Phones -->
           <div class="float-zoom-controls">
@@ -311,9 +336,9 @@
         </div>
 
         <!-- Thanh Cuộn Ngang 60 Huyệt Chọn Nhanh (Quick Acupoints Navigator) -->
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px;">
-          <span style="font-size:12px;font-weight:700;color:var(--emerald-light);">⚡ CHỌN NHANH 60 HUYỆT (TỰ BAY ĐẾN):</span>
-          <span style="font-size:11px;color:var(--text-dim);">Cuộn ngang ➔</span>
+        <div class="carousel-header-bar">
+          <span class="carousel-title">⚡ 60 HUYỆT (TỰ BAY ĐẾN):</span>
+          <input type="text" id="carousel-search" class="carousel-search-input" placeholder="🔍 Lọc huyệt (tên, WHO, tác dụng)...">
         </div>
         <div class="quick-points-carousel" id="quick-points-carousel"></div>
       </section>
@@ -425,6 +450,7 @@
 
   <!-- 3D & CORE ASSETS -->
   <script src="assets/three.min.js"></script>
+  <script src="assets/DRACOLoader.js"></script>
   <script src="assets/GLTFLoader.js"></script>
   <script src="assets/model-data.js"></script>
   <script src="assets/model-utils.js"></script>

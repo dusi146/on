@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+.vite/
+dist/
+
+# Raw unpacked research repos
+tcm-acupoints-main/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
